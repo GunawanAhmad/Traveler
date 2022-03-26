@@ -61,6 +61,28 @@
     margin-bottom: 3rem;
 }
 
+.ml-1 {
+    margin-left: 1rem;
+}
+
+.ml-2 {
+    margin-left: 2rem;
+}
+.ml-3 {
+    margin-left: 3rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+.mt-3 {
+    margin-top: 3rem;
+}
+
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -127,4 +149,13 @@
 .b-line.b-line-left::after {
     width: 125%;
     left: -25%;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
 }
