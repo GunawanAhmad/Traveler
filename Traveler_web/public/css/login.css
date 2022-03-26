@@ -1,0 +1,35 @@
+@import url(./_reset.css);
+@import url(./_sys_design.css);
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 72px;
+    padding-bottom: 2rem;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
