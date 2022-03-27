@@ -29,7 +29,7 @@
                 </div>
             </div>
             <ul class="mt-1">
-                <li><a href="" class="text-white font-size-18 font-w-bold">Dashboard</a></li>
+                <li><a href="" class="text-white font-size-18 font-w-bold">Menu</a></li>
                 <li><a href="" class="text-white font-size-18 font-w-bold">Setting</a></li>
             </ul>
         </div>
