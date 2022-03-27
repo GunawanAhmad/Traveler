@@ -20,38 +20,38 @@
     <div class="container">
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Traveler</h1>
         <div class="menu-wrapper">
-            <button class="menu-container">
+            <a class="menu-container">
                 <div class="icon font-size-72">
                     <i class="fa-solid fa-rectangle-list"></i>
                 </div>
                 <div class="menu-description">
                     <p class="font-size-18 font-w-bold">Data Wisata</p>
                 </div>
-            </button>
-            <button class="menu-container">
+            </a>
+            <a class="menu-container">
                 <div class="icon font-size-72">
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <div class="menu-description">
                     <p class="font-size-18 font-w-bold">Tambah Wisata</p>
                 </div>
-            </button>
-            <button class="menu-container">
+            </a>
+            <a class="menu-container">
                 <div class="icon font-size-72">
                     <i class="fa-solid fa-id-badge"></i>
                 </div>
                 <div class="menu-description">
                     <p class="font-size-18 font-w-bold">Data Tour Guide</p>
                 </div>
-            </button>
-            <button class="menu-container">
+            </a>
+            <a class="menu-container">
                 <div class="icon font-size-72">
                     <i class="fa-solid fa-clipboard-check"></i>
                 </div>
                 <div class="menu-description">
                     <p class="font-size-18 font-w-bold">Data Request Tour Guide</p>
                 </div>
-            </button>
+            </a>
         </div>
     </div>
 </body>
