@@ -1,0 +1,70 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container ul {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.container h1 {
+    padding: 2rem 0;
+}
+
+.wisata-container img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 1rem;
+}
+
+.wisata-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border: 1px solid var(--clr-gray);
+    border-radius: 10px;
+}
+
+.wisata-container:hover {
+    box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.wisata-container a {
+    display: flex;
+    color: black;
+    align-items: center;
+    flex: 100%;
+    padding: 1rem;
+}
+
+.wisata-container .action-btn {
+    flex-direction: 100%;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.wisata-container .action-btn button {
+    background: #dadada;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--clr-primary);
+}
+
+.wisata-container .action-btn button:hover,
+.wisata-container .action-btn button:focus {
+    background-color: var(--clr-primary);
+    color: white;
+}

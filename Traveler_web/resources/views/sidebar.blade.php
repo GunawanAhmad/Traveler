@@ -29,8 +29,8 @@
                 </div>
             </div>
             <ul class="mt-1">
-                <li><a href="" class="text-white font-size-18 font-w-bold">Menu</a></li>
-                <li><a href="" class="text-white font-size-18 font-w-bold">Setting</a></li>
+                <li><a href="/" class="text-white font-size-18 font-w-bold">Menu</a></li>
+                <li><a href="/setting" class="text-white font-size-18 font-w-bold">Setting</a></li>
             </ul>
         </div>
         <button class="btn text-white font-w-bold font-size-18" id="logout-btn">Logout</button>
