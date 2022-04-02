@@ -26,3 +26,8 @@ Route::get('/login', function () {
 Route::get('/daftar_wisata', function () {
     return view('daftar_wisata');
 });
+
+
+Route::get('/tambah_wisata', function () {
+    return view('tambah_wisata');
+});

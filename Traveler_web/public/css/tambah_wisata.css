@@ -1,0 +1,74 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.container h1 {
+    padding: 2rem 0;
+}
+
+.form {
+    width: 100%;
+    display: block;
+    max-width: 320px;
+    margin-top: 2rem;
+}
+
+.input-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    outline: 2px solid var(--clr-primary);
+    border-radius: 5px;
+    border: none;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+.input-container textarea {
+    resize: vertical;
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+    outline: 2px solid var(--clr-secondary);
+}
+
+.input-file-container {
+    position: relative;
+    outline: 2px solid var(--clr-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-radius: 5px;
+}
+
+.input-file-container .icon {
+    color: var(--clr-primary);
+    font-size: 32px;
+}
+
+.input-file-container input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
