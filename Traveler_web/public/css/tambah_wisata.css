@@ -15,7 +15,7 @@
 .form {
     width: 100%;
     display: block;
-    max-width: 320px;
+    max-width: 350px;
     margin-top: 2rem;
 }
 
@@ -51,17 +51,18 @@
 
 .input-file-container {
     position: relative;
-    outline: 2px solid var(--clr-primary);
+    outline: 2px dashed var(--clr-primary);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 1rem;
     border-radius: 5px;
 }
 
 .input-file-container .icon {
     color: var(--clr-primary);
-    font-size: 32px;
+    font-size: 24px;
+    margin-bottom: 0.5rem;
 }
 
 .input-file-container input[type="file"] {
@@ -71,4 +72,22 @@
     height: 100%;
     width: 100%;
     opacity: 0;
+    cursor: pointer;
+}
+
+#img-preview {
+    display: block;
+    max-height: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#img-preview[src=""] {
+    display: none;
+}
+
+.input-container .input-file-wrapper {
+    border: 2px solid var(--clr-primary);
+    padding: 1rem 1rem;
+    border-radius: 5px;
 }

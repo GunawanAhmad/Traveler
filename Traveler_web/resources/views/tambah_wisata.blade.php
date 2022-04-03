@@ -29,23 +29,28 @@
                 <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
             </div>
             <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Nama daerah</label>
+                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Deskripsi</label>
                 <textarea type="text" id="nama_daerah" name="nama_daerah" class="font-size-18" rows="5"></textarea>
             </div>
-            <div class="input-container">
+            <div class="input-container ">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Foto</label>
-                <div class="input-file-container">
-                    <input type="file" id="nama_daerah" name="nama_daerah" class="font-size-18"
-                        onchange="inputFileAction(this)">
-                    <div class="text-center">
-                        <div class="icon font-size-24">
-                            <i class="fa-solid fa-file-image "></i>
+                <div class="input-file-wrapper">
+                    <img src="" alt="image-preview" id="img-preview">
+                    <p class="file-name mt-0-5 gray-text font-size-13 mb-2" style="display: none"></p>
+                    <div class="input-file-container ">
+                        <input type="file" id="nama_daerah" name="nama_daerah" class="font-size-18"
+                            onchange="inputFileAction(this)" accept="image/*">
+                        <div class="text-center">
+                            <div class="icon font-size-24">
+                                <i class="fa-solid fa-file-image "></i>
+                            </div>
+                            <p class="">Drop gambar ke sini, atau <span
+                                    class="secondary-text">pilih</span>
+                            </p>
                         </div>
-                        <p class="mt-1">Drop your image here, or <span class="secondary-text">choose</span>
-                        </p>
                     </div>
+
                 </div>
-                <p class="file-name mt-0-5 gray-text font-size-13">nama file</p>
             </div>
             <div class="text-end">
                 <button class="btn primary-btn font-size-18">Tambahkan</button>
@@ -55,7 +60,12 @@
 
     <script>
         function inputFileAction(e) {
-            document.querySelector('.file-name').innerText = e.files[0].name
+            const [file] = e.files
+            if (file) {
+                document.querySelector("#img-preview").setAttribute("src", URL.createObjectURL(file));
+                document.querySelector('.file-name').innerText = e.files[0].name
+                document.querySelector('.file-name').style.display = 'block'
+            }
         }
     </script>
 </body>
