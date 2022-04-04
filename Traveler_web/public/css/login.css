@@ -31,7 +31,7 @@ input {
 }
 
 input::placeholder {
-    color: white;
+    color: gray;
 }
 
 /* Change the white to any color */

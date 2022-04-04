@@ -20,7 +20,8 @@
                 <input type="email" placeholder="Email" class="input form-input mb-1 bg-primary" id="email" name="email">
                 <input type="password" placeholder="Password" class="input form-input mb-1 bg-primary" id="password"
                     name="password">
-                <button type="submit" class="btn mx-auto d-block bg-primary text-white">Login</button>
+                <button type="submit"
+                    class="btn primary-btn mx-auto d-block bg-primary text-white font-size-13">Login</button>
             </form>
         </div>
     </main>
