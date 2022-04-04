@@ -31,3 +31,7 @@ Route::get('/daftar_wisata', function () {
 Route::get('/tambah_wisata', function () {
     return view('tambah_wisata');
 });
+
+Route::get('/request_guide', function () {
+    return view('request_guide');
+});
