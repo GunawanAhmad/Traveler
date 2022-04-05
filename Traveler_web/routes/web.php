@@ -39,3 +39,6 @@ Route::get('/request_guide', function () {
 Route::get('/daftar_guide', function () {
     return view('daftar_guide');
 });
+Route::get('/Edit_Akun', function () {
+    return view('Edit_Akun');
+});
