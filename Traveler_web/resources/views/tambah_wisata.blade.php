@@ -25,6 +25,10 @@
                 <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
             </div>
             <div class="input-container">
+                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Provinsi</label>
+                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
+            </div>
+            <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Alamat</label>
                 <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
             </div>

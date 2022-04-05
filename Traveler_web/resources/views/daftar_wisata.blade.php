@@ -40,11 +40,11 @@
             </li>
             <li class="wisata-container">
                 <a href="">
-                    <img src="{{ asset('img/img.jpg') }}" alt="">
+                    <img src="{{ asset('img/gedungsate.png') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Lombok</p>
+                        <p class="font-size-24 font-w-bold mb-1">Bandung</p>
                         <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
+                                <i class="fa-solid fa-location-dot"></i></span> Bandung, Jawa Barat</p>
                     </div>
                 </a>
                 <div class="action-btn">
@@ -58,11 +58,11 @@
             </li>
             <li class="wisata-container">
                 <a href="">
-                    <img src="{{ asset('img/img.jpg') }}" alt="">
+                    <img src="{{ asset('img/monas.jpg') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Lombok</p>
+                        <p class="font-size-24 font-w-bold mb-1">Jakarta</p>
                         <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
+                                <i class="fa-solid fa-location-dot"></i></span> Jakarta, DKI Jakarta</p>
                     </div>
                 </a>
                 <div class="action-btn">
