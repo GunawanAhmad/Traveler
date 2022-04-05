@@ -33,3 +33,14 @@ Route::get('/daftar_wisata', function () {
 Route::get('/tambah_wisata', function () {
     return view('tambah_wisata');
 });
+
+Route::get('/request_guide', function () {
+    return view('request_guide');
+});
+
+Route::get('/daftar_guide', function () {
+    return view('daftar_guide');
+});
+Route::get('/Edit_Akun', function () {
+    return view('Edit_Akun');
+});

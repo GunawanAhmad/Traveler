@@ -13,64 +13,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('css/daftar_wisata.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/request_guide.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <h1 class="font-size-72 b-line b-line-mid font-w-bold">Daftar Wisata</h1>
+        <h1 class="font-size-72 b-line b-line-mid font-w-bold">Daftar Request</h1>
         <ul>
             <li class="wisata-container">
                 <a href="">
-                    <img src="{{ asset('img/img.jpg') }}" alt="">
+                    <img src="{{ asset('img/fotoAndira.jpg') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Lombok</p>
+                        <p class="font-size-24 font-w-bold mb-1">Andira K.</p>
+                        <p class="gray-text"><span>
+                                <i class="fa-solid fa-location-dot"></i></span>  Lombok, Nusa Tenggara Barat</p>
+                    </div>
+                </a>
+                <div class="action-btn" style="color:yellow">
+                    <button>
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="wisata-container">
+                <a href="">
+                    <img src="{{ asset('img/fotoangel.jpg') }}" alt="">
+                    <div class="tempat-info">
+                        <p class="font-size-24 font-w-bold mb-1">Angel C.</p>
                         <p class="gray-text"><span>
                                 <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
                     </div>
                 </a>
                 <div class="action-btn">
                     <button>
-                        <i class="fa-solid fa-pencil"></i>
+                        <i class="fa-solid fa-check"></i>
                     </button>
                     <button>
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            </li>
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/gedungsate.png') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Bandung</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Bandung, Jawa Barat</p>
-                    </div>
-                </a>
-                <div class="action-btn">
-                    <button>
-                        <i class="fa-solid fa-pencil"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-x"></i>
                     </button>
                 </div>
             </li>
             <li class="wisata-container">
                 <a href="">
-                    <img src="{{ asset('img/monas.jpg') }}" alt="">
+                    <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Jakarta</p>
+                        <p class="font-size-24 font-w-bold mb-1">Sakaa K.</p>
                         <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Jakarta, DKI Jakarta</p>
+                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
                     </div>
                 </a>
                 <div class="action-btn">
                     <button>
-                        <i class="fa-solid fa-pencil"></i>
+                        <i class="fa-solid fa-check"></i>
                     </button>
                     <button>
-                        <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-x"></i>
                     </button>
                 </div>
             </li>

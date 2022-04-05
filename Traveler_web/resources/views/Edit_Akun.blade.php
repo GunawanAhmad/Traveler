@@ -13,28 +13,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('css/tambah_wisata.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Edit_Akun.css') }}">
 </head>
 
 <body>
+                   
     <div class="container">
-        <h1 class="font-size-72 b-line b-line-mid font-w-bold">Tambah Wisata</h1>
+           
+        <h1 class="font-size-62  font-w-bold">Edit Akun</h1> 
+            <br>
+            <br>
+            <div class="user-info flex flex center">
+                <div class="img-container">
+                <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="" >
+                </div>
+                <div class="ml-2">
+                    <p class="font-w-bold font-size-18 text-black mb-1">Namamu</p>
+                    <p class="font-size-13 text-black">Administrator</p>
+                </div>
+            </div>
         <form action="" class="form">
             <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Nama daerah</label>
+                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Nama Profil</label>
                 <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
-            </div>
-            <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Provinsi</label>
-                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
-            </div>
-            <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Alamat</label>
-                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
-            </div>
-            <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Deskripsi</label>
-                <textarea type="text" id="nama_daerah" name="nama_daerah" class="font-size-18" rows="5"></textarea>
             </div>
             <div class="input-container ">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Foto</label>
@@ -62,16 +63,7 @@
         </form>
     </div>
 
-    <script>
-        function inputFileAction(e) {
-            const [file] = e.files
-            if (file) {
-                document.querySelector("#img-preview").setAttribute("src", URL.createObjectURL(file));
-                document.querySelector('.file-name').innerText = e.files[0].name
-                document.querySelector('.file-name').style.display = 'block'
-            }
-        }
-    </script>
+    
 </body>
 
 </html>
