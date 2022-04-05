@@ -26,7 +26,7 @@
                     <div class="tempat-info">
                         <p class="font-size-24 font-w-bold mb-1">Andira K.</p>
                         <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
+                                <i class="fa-solid fa-location-dot"></i></span>  Lombok, Nusa Tenggara Barat</p>
                     </div>
                 </a>
                 <div class="action-btn">
