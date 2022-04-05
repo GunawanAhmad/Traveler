@@ -29,12 +29,12 @@
                                 <i class="fa-solid fa-location-dot"></i></span>  Lombok, Nusa Tenggara Barat</p>
                     </div>
                 </a>
-                <div class="action-btn">
+                <div class="action-btn" style="color:yellow">
                     <button>
-                        <i class="fa-solid fa-pencil"></i>
+                        <i class="fa-solid fa-check"></i>
                     </button>
                     <button>
-                        <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-x"></i>
                     </button>
                 </div>
             </li>
@@ -49,10 +49,10 @@
                 </a>
                 <div class="action-btn">
                     <button>
-                        <i class="fa-solid fa-pencil"></i>
+                        <i class="fa-solid fa-check"></i>
                     </button>
                     <button>
-                        <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-x"></i>
                     </button>
                 </div>
             </li>
@@ -67,10 +67,10 @@
                 </a>
                 <div class="action-btn">
                     <button>
-                        <i class="fa-solid fa-pencil"></i>
+                        <i class="fa-solid fa-check"></i>
                     </button>
                     <button>
-                        <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-x"></i>
                     </button>
                 </div>
             </li>
