@@ -3,6 +3,7 @@
     --clr-secondary: #fbbc04;
     --clr-gray: #c4c4c4;
     --clr-dark-gray: #9e9e9e;
+    --clr-red: #df4759;
 }
 
 .text-center {
@@ -111,6 +112,10 @@
 
 .secondary-text {
     color: var(--clr-secondary);
+}
+
+.danger-text {
+    color: var(--clr-red);
 }
 
 .gray-text {

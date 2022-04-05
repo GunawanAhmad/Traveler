@@ -16,12 +16,18 @@
     <main>
         <div class="container">
             <h1 class="font-size-72 mb-3 b-line b-line-mid">Traveler</h1>
-            <form action="">
-                <input type="email" placeholder="Email" class="input form-input mb-1 bg-primary" id="email" name="email">
-                <input type="password" placeholder="Password" class="input form-input mb-1 bg-primary" id="password"
-                    name="password">
+            <form action="/login" method="POST">
+                @csrf
+                <!-- {{ csrf_field() }} -->
+                <input type="email" placeholder="Email" class="input form-input mb-1 bg-primary" id="email" name="email"
+                    required>
+                <input type="password" placeholder="Password" class="input form-input bg-primary  id=" password"
+                    name="password" required>
+                @if (session()->has('loginError'))
+                    <p class="font-size-13 danger-text mt-0-5">{{ session('loginError') }}</p>
+                @endif
                 <button type="submit"
-                    class="btn primary-btn mx-auto d-block bg-primary text-white font-size-13">Login</button>
+                    class="btn primary-btn mx-auto d-block bg-primary text-white font-size-13 mt-1">Login</button>
             </form>
         </div>
     </main>
