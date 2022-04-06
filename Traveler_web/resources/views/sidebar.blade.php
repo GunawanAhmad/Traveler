@@ -24,7 +24,7 @@
                     <img src="" alt="">
                 </div>
                 <div class="ml-2">
-                    <p class="font-w-bold font-size-18 text-white mb-1">Namamu</p>
+                    <p class="font-w-bold font-size-18 text-white mb-1">{{ auth()->user()->name }}</p>
                     <p class="font-size-13 text-white">Administrator</p>
                 </div>
             </div>
@@ -33,7 +33,12 @@
                 <li><a href="Edit_Akun" class="text-white font-size-18 font-w-bold">Edit Akun</a></li>
             </ul>
         </div>
-        <button class="btn text-white font-w-bold font-size-18" id="logout-btn">Logout</button>
+        <div>
+            <form action="/logout" method="POST">
+                @csrf
+                <button type="submit" class="btn text-white font-w-bold font-size-18" id="logout-btn">Logout</button>
+            </form>
+        </div>
         <button class="sidebar-toggle" onclick="show_sidebar()">
             <span>
                 <i class="fa-solid fa-arrow-right"></i>

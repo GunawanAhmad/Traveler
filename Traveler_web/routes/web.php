@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/logout', [LoginController::class, 'logout']);
 
 
 Route::get('/daftar_wisata', function () {
