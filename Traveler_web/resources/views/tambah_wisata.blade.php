@@ -26,7 +26,110 @@
             </div>
             <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Provinsi</label>
-                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
+                <select class="form-control font-size-18" tabindex="-98" name="regional_code" required="">
+                    <option value="11">
+                        ACEH
+                    </option>
+                    <option value="12">
+                        SUMATERA UTARA
+                    </option>
+                    <option value="13">
+                        SUMATERA BARAT
+                    </option>
+                    <option value="14">
+                        R I A U
+                    </option>
+                    <option value="15">
+                        J A M B I
+                    </option>
+                    <option value="16">
+                        SUMATERA SELATAN
+                    </option>
+                    <option value="17">
+                        BENGKULU
+                    </option>
+                    <option value="18">
+                        LAMPUNG
+                    </option>
+                    <option value="19">
+                        KEPULAUAN BANGKA BELITUNG
+                    </option>
+                    <option value="21">
+                        KEPULAUAN RIAU
+                    </option>
+                    <option value="31">
+                        DKI JAKARTA
+                    </option>
+                    <option value="32">
+                        JAWA BARAT
+                    </option>
+                    <option value="33">
+                        JAWA TENGAH
+                    </option>
+                    <option value="34">
+                        DI YOGYAKARTA
+                    </option>
+                    <option value="35">
+                        JAWA TIMUR
+                    </option>
+                    <option value="36">
+                        B A N T E N
+                    </option>
+                    <option value="51">
+                        BALI
+                    </option>
+                    <option value="52">
+                        NUSA TENGGARA BARAT
+                    </option>
+                    <option value="53">
+                        NUSA TENGGARA TIMUR
+                    </option>
+                    <option value="61">
+                        KALIMANTAN BARAT
+                    </option>
+                    <option value="62">
+                        KALIMANTAN TENGAH
+                    </option>
+                    <option value="63">
+                        KALIMANTAN SELATAN
+                    </option>
+                    <option value="64">
+                        KALIMANTAN TIMUR
+                    </option>
+                    <option value="71">
+                        SULAWESI UTARA
+                    </option>
+                    <option value="73">
+                        SULAWESI SELATAN
+                    </option>
+                    <option value="74">
+                        SULAWESI TENGGARA
+                    </option>
+                    <option value="75">
+                        GORONTALO
+                    </option>
+                    <option value="76">
+                        SULAWESI BARAT
+                    </option>
+                    <option value="81">
+                        MALUKU
+                    </option>
+                    <option value="82">
+                        MALUKU UTARA
+                    </option>
+                    <option value="94">
+                        PAPUA
+                    </option>
+                    <option value="91">
+                        PAPUA BARAT
+                    </option>
+                    <option value="72">
+                        SULAWESI TENGAH
+                    </option>
+                    <option value="65">
+                        KALIMANTAN UTARA
+                    </option>
+                </select>
             </div>
             <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Alamat</label>
