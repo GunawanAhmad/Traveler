@@ -26,4 +26,9 @@ class LoginController extends Controller
         return back()->with('loginError' ,'Login failed');
 
     }
+
+
+    function index() {
+        return view('login');
+    }
 }
