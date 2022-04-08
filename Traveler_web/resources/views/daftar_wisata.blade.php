@@ -20,60 +20,29 @@
     <div class="container">
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Daftar Wisata</h1>
         <ul>
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/img.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Lombok</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
+
+            @foreach ($data as $item)
+                <li class="wisata-container">
+                    <a href="">
+                        <img src="{{ url('/') . '/storage/images/' . $item->foto }}" alt="">
+                        <div class="tempat-info">
+                            <p class="font-size-24 font-w-bold mb-1">{{ $item->nama_daerah }}</p>
+                            <p class="gray-text"><span>
+                                    <i class="fa-solid fa-location-dot"></i></span> {{ $item->alamat }}</p>
+                        </div>
+                    </a>
+                    <div class="action-btn">
+                        <button>
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
                     </div>
-                </a>
-                <div class="action-btn">
-                    <button>
-                        <i class="fa-solid fa-pencil"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            </li>
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/gedungsate.png') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Bandung</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Bandung, Jawa Barat</p>
-                    </div>
-                </a>
-                <div class="action-btn">
-                    <button>
-                        <i class="fa-solid fa-pencil"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            </li>
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/monas.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Jakarta</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Jakarta, DKI Jakarta</p>
-                    </div>
-                </a>
-                <div class="action-btn">
-                    <button>
-                        <i class="fa-solid fa-pencil"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            </li>
+                </li>
+            @endforeach
+
+
         </ul>
     </div>
 </body>

@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Validator;
 class DaftarWisataController extends Controller
 {
     function index() {
-        return view('daftar_wisata');
+        $data =  DaftarWisata::all();
+        return view('daftar_wisata', ['data' => $data]);
     }
 
     function store(Request $request) {
