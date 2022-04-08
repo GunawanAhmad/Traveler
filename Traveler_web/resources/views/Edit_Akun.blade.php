@@ -17,10 +17,10 @@
 </head>
 
 <body>
-                   
+
     <div class="container">
-           
-        <h1 class="font-size-62  font-w-bold">Edit Akun</h1> 
+
+        <h1 class="font-size-62  font-w-bold">Edit Akun</h1>
             <br>
             <br>
             <div class="user-info flex flex center">
@@ -63,7 +63,7 @@
         </form>
     </div>
 
-    
+
 </body>
 
 </html>

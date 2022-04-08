@@ -13,7 +13,7 @@ class LoginController extends Controller
             'password' => 'required',
             'role'
         ]);
-        
+
         if(Auth::attempt($credentials)) {
             if(Auth::user()['role'] == 'admin') {
                 $request->session()->regenerate();

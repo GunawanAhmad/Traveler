@@ -44,3 +44,7 @@ Route::get('/daftar_guide', function () {
 Route::get('/Edit_Akun', function () {
     return view('Edit_Akun');
 })->middleware('auth');
+
+Route::get('/Info_guide', function () {
+    return view('Info_guide');
+})->middleware('auth');
