@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DaftarWisataController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,18 +21,18 @@ Route::get('/', function () {
 
 
 Route::post('/login', [LoginController::class, 'login']);
+
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
-Route::get('/daftar_wisata', function () {
-    return view('daftar_wisata');
-})->middleware('auth');
+Route::get('/daftar_wisata', [DaftarWisataController::class, 'index'])->middleware('auth');
 
+Route::post('/tambah_wisata', [DaftarWisataController::class, 'store'])->middleware('auth');
 
-Route::get('/tambah_wisata', function () {
-    return view('tambah_wisata');
-})->middleware('auth');
+Route::get('/tambah_wisata', [DaftarWisataController::class, 'tambah_wisata_view'])->middleware('auth');
+
 
 Route::get('/request_guide', function () {
     return view('request_guide');

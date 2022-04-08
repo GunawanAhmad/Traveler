@@ -13,140 +13,96 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/tambah_wisata.css') }}">
 </head>
 
 <body>
+    <!-- Modal -->
+    @if ($errors->any())
+        <div class="modal fade hide" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">
+                            {{ $errors->first() }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="container">
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Tambah Wisata</h1>
-        <form action="" class="form">
+        <form action="/tambah_wisata" method="POST" class="form" enctype="multipart/form-data">
+            @csrf
             <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Nama daerah</label>
                 <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
             </div>
             <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Provinsi</label>
-                <select class="form-control font-size-18" tabindex="-98" name="regional_code" required="">
-                    <option value="11">
-                        ACEH
-                    </option>
-                    <option value="12">
-                        SUMATERA UTARA
-                    </option>
-                    <option value="13">
-                        SUMATERA BARAT
-                    </option>
-                    <option value="14">
-                        R I A U
-                    </option>
-                    <option value="15">
-                        J A M B I
-                    </option>
-                    <option value="16">
-                        SUMATERA SELATAN
-                    </option>
-                    <option value="17">
-                        BENGKULU
-                    </option>
-                    <option value="18">
-                        LAMPUNG
-                    </option>
-                    <option value="19">
-                        KEPULAUAN BANGKA BELITUNG
-                    </option>
-                    <option value="21">
-                        KEPULAUAN RIAU
-                    </option>
-                    <option value="31">
-                        DKI JAKARTA
-                    </option>
-                    <option value="32">
-                        JAWA BARAT
-                    </option>
-                    <option value="33">
-                        JAWA TENGAH
-                    </option>
-                    <option value="34">
-                        DI YOGYAKARTA
-                    </option>
-                    <option value="35">
-                        JAWA TIMUR
-                    </option>
-                    <option value="36">
-                        B A N T E N
-                    </option>
-                    <option value="51">
-                        BALI
-                    </option>
-                    <option value="52">
-                        NUSA TENGGARA BARAT
-                    </option>
-                    <option value="53">
-                        NUSA TENGGARA TIMUR
-                    </option>
-                    <option value="61">
-                        KALIMANTAN BARAT
-                    </option>
-                    <option value="62">
-                        KALIMANTAN TENGAH
-                    </option>
-                    <option value="63">
-                        KALIMANTAN SELATAN
-                    </option>
-                    <option value="64">
-                        KALIMANTAN TIMUR
-                    </option>
-                    <option value="71">
-                        SULAWESI UTARA
-                    </option>
-                    <option value="73">
-                        SULAWESI SELATAN
-                    </option>
-                    <option value="74">
-                        SULAWESI TENGGARA
-                    </option>
-                    <option value="75">
-                        GORONTALO
-                    </option>
-                    <option value="76">
-                        SULAWESI BARAT
-                    </option>
-                    <option value="81">
-                        MALUKU
-                    </option>
-                    <option value="82">
-                        MALUKU UTARA
-                    </option>
-                    <option value="94">
-                        PAPUA
-                    </option>
-                    <option value="91">
-                        PAPUA BARAT
-                    </option>
-                    <option value="72">
-                        SULAWESI TENGAH
-                    </option>
-                    <option value="65">
-                        KALIMANTAN UTARA
-                    </option>
+                <select name="provinsi" class="font-size-18 font-w-medium">
+                    <option value="Aceh">Aceh</option>
+                    <option value="Sumut">Sumatera Utara</option>
+                    <option value="sumbar">Sumatera Barat</option>
+                    <option value="Riau">Riau</option>
+                    <option value="Jambi">Jambi</option>
+                    <option value="Sumsel">Sumatera Selatan</option>
+                    <option value="Bengkulu">Bengkulu</option>
+                    <option value="Lampung">Lampung</option>
+                    <option value="BaBel">Kep. Bangka Belitung</option>
+                    <option value="kepRiau">Kepulauan Riau</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Jabar">Jawa Barat</option>
+                    <option value="Banten">Banten</option>
+                    <option value="Jateng">Jawa Tengah</option>
+                    <option value="Yogyakarta">Yogyakarta</option>
+                    <option value="Jatim">Jawa Timur</option>
+                    <option value="Kalbar">Kalimantan Barat</option>
+                    <option value="Kalteng">Kalimantan Tengah</option>
+                    <option value="Kalsel">Kalimantan Selatan</option>
+                    <option value="Kaltim">Kalimantan Timur</option>
+                    <option value="Kaltra">Kalimantan Utara</option>
+                    <option value="Bali">Bali</option>
+                    <option value="NTT">Nusa Tenggara Timur</option>
+                    <option value="NTB">Nusa Tenggara Barat</option>
+                    <option value="Sulut">Sulawesi Utara</option>
+                    <option value="Sulteng">Sulawesi Tengah</option>
+                    <option value="Sulsel">Sulawesi Selatan</option>
+                    <option value="Sultengg">Sulawesi Tenggara</option>
+                    <option value="Sulbar">Sulawesi Barat</option>
+                    <option value="Gorontalo">Gorontalo</option>
+                    <option value="Maluku">Maluku</option>
+                    <option value="Maluku Utara">Maluku Utara</option>
+                    <option value="Papua">Papua</option>
+                    <option value="Papua Barat">Papua Barat</option>
                 </select>
             </div>
             <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Alamat</label>
-                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
+                <label for="alamat" class="font-size-18 font-w-medium mb-2">Alamat</label>
+                <input type="text" id="alamat" name="alamat" class="font-size-18">
             </div>
             <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Deskripsi</label>
-                <textarea type="text" id="nama_daerah" name="nama_daerah" class="font-size-18" rows="5"></textarea>
+                <label for="deskripsi" class="font-size-18 font-w-medium mb-2">Deskripsi</label>
+                <textarea type="text" id="deskripsi" name="deskripsi" class="font-size-18" rows="5"></textarea>
             </div>
             <div class="input-container ">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Foto</label>
+                <label for="foto" class="font-size-18 font-w-medium mb-2">Foto</label>
                 <div class="input-file-wrapper">
                     <img src="" alt="image-preview" id="img-preview">
                     <p class="file-name mt-0-5 gray-text font-size-13 mb-2" style="display: none"></p>
                     <div class="input-file-container ">
-                        <input type="file" id="nama_daerah" name="nama_daerah" class="font-size-18"
-                            onchange="inputFileAction(this)" accept="image/*">
+                        <input type="file" id="foto" name="foto" class="font-size-18" onchange="inputFileAction(this)"
+                            accept="image/*">
                         <div class="text-center">
                             <div class="icon font-size-24">
                                 <i class="fa-solid fa-file-image "></i>
@@ -160,12 +116,22 @@
                 </div>
             </div>
             <div class="text-end">
-                <button class="btn primary-btn font-size-18">Tambahkan</button>
+                <button type="submit" class="btn primary-btn font-size-18">Tambahkan</button>
             </div>
         </form>
     </div>
 
-    <script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+        @if (count($errors) > 0)
+            $('#exampleModal').modal('show');
+        @endif
+
         function inputFileAction(e) {
             const [file] = e.files
             if (file) {
