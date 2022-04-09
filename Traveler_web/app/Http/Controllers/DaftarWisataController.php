@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\DaftarWisata;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 ;
@@ -21,7 +20,7 @@ class DaftarWisataController extends Controller
     function store(Request $request) {
         
 
-        $validator = Validator::make($request->all(), ['foto' => 'image|mimes:jpg|max:500', 'alamat' => 'required'], ['foto.max'=> 'ukuran file maksimal 500 KB', 'foto.mimes'=>'tipe file hanya boleh jpg', 'alamat.required' => 'alamat tidak boleh kosong']);
+        $validator = Validator::make($request->all(), ['foto' => 'image|mimes:jpeg,jpg,png,gif|max:500', 'alamat' => 'required'], ['foto.max'=> 'ukuran file maksimal 500 KB', 'foto.mimes'=>'tipe file hanya boleh jpeg,jpg,png,gif', 'alamat.required' => 'alamat tidak boleh kosong']);
         if($validator->fails()) {
             $error = $validator->errors()->first();
             return redirect()->back()->withErrors(['msg' => $error]);
@@ -37,7 +36,7 @@ class DaftarWisataController extends Controller
     }
 
     function tambah_wisata_view() {
-        return view('tambah_wisata');
+        return view('form_wisata');
     }
 
     function hapus_wisata(Request $request) {
@@ -51,12 +50,16 @@ class DaftarWisataController extends Controller
     function edit_wisata_view() {
         $id = last(request()->segments());
         $wisata = DaftarWisata::find($id);
-        Log::info($wisata);
-        return view('tambah_wisata', ['data' => $wisata, 'edit' => true]);
+        return view('form_wisata', ['data' => $wisata, 'edit' => true]);
     }
 
     function edit_wisata(Request $request) {
-        // Log::info($request);
+        $validator = Validator::make($request->all(), ['foto' => 'image|mimes:jpeg,jpg,png,gif|max:500', 'alamat' => 'required'], ['foto.max'=> 'ukuran file maksimal 500 KB', 'foto.mimes'=>'tipe file hanya boleh jpeg,jpg,png,gif', 'alamat.required' => 'alamat tidak boleh kosong']);
+        if($validator->fails()) {
+            $error = $validator->errors()->first();
+            return redirect()->back()->withErrors(['msg' => $error]);
+        }
+        
         $id = last(request()->segments());
         $model = DaftarWisata::find($id);
         $foto_name = $model->foto;

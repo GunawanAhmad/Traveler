@@ -74,7 +74,7 @@
                 <div class="input-file-wrapper">
                     <img src="@isset($edit) {{ url('/') . '/storage/images/' . $data->foto }} @endisset"
                         alt="image-preview" id="img-preview">
-                    <p class="file-name mt-0-5 gray-text font-size-13 mb-2"
+                    <p class="file-name mt-0-5 gray-text font-size-13 mb-4"
                         style="@empty($edit) display:none @endempty">
                         @isset($edit)
                             {{ $data->foto }}
@@ -114,6 +114,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
+        @if (count($errors) > 0)
+            $('#exampleModal').modal('show');
+        @endif
+
         function inputFileAction(e) {
             const [file] = e.files
             if (file) {
