@@ -35,9 +35,9 @@
                         </div>
                     </a>
                     <div class="action-btn">
-                        <button>
+                        <a href="/edit_wisata/{{ $item->id }}" class="btn">
                             <i class="fa-solid fa-pencil"></i>
-                        </button>
+                        </a>
                         <button data-toggle="modal" data-target="#deleteConfimation"
                             onclick="selectDeleteItem({{ $item->id }})">
                             <i class="fa-solid fa-trash-can"></i>

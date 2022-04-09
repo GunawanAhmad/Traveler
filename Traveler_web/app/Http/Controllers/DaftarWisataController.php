@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\DaftarWisata;
-use Illuminate\Http\Request;;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+
+;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -39,7 +43,31 @@ class DaftarWisataController extends Controller
     function hapus_wisata(Request $request) {
         $id = $request->id;
         $wisata = DaftarWisata::find($id);
+        Storage::delete('/public/images/'.$wisata->foto);
         $wisata->delete();
         return response()->json(['succes' => 'Daftar wisata berhasil dihapus']);
+    }
+
+    function edit_wisata_view() {
+        $id = last(request()->segments());
+        $wisata = DaftarWisata::find($id);
+        Log::info($wisata);
+        return view('tambah_wisata', ['data' => $wisata, 'edit' => true]);
+    }
+
+    function edit_wisata(Request $request) {
+        // Log::info($request);
+        $id = last(request()->segments());
+        $model = DaftarWisata::find($id);
+        $foto_name = $model->foto;
+        $model->update($request->all());
+        if($request->file('foto')) {
+            Storage::delete('/public/images/'.$foto_name);
+            $name = $request->file('foto')->hashName();
+            $request->file('foto')->store('public/images');
+            $model->update(['foto' => $name]);
+        }
+
+        return redirect('/daftar_wisata');
     }
 }

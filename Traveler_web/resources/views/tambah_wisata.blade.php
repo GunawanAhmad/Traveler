@@ -42,64 +42,44 @@
     @endif
     <div class="container">
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Tambah Wisata</h1>
-        <form action="/tambah_wisata" method="POST" class="form" enctype="multipart/form-data">
+        <form
+            action="@isset($edit) /edit_wisata/{{ $data->id }} @else /tambah_wisata @endisset"
+            method="POST" class="form" enctype="multipart/form-data">
             @csrf
             <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Nama daerah</label>
-                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
+                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18"
+                    value="@isset($edit) {{ $data->nama_daerah }} @endisset">
             </div>
             <div class="input-container">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Provinsi</label>
-                <select name="provinsi" class="font-size-18 font-w-medium">
-                    <option value="Aceh">Aceh</option>
-                    <option value="Sumut">Sumatera Utara</option>
-                    <option value="sumbar">Sumatera Barat</option>
-                    <option value="Riau">Riau</option>
-                    <option value="Jambi">Jambi</option>
-                    <option value="Sumsel">Sumatera Selatan</option>
-                    <option value="Bengkulu">Bengkulu</option>
-                    <option value="Lampung">Lampung</option>
-                    <option value="BaBel">Kep. Bangka Belitung</option>
-                    <option value="kepRiau">Kepulauan Riau</option>
-                    <option value="Jakarta">Jakarta</option>
-                    <option value="Jabar">Jawa Barat</option>
-                    <option value="Banten">Banten</option>
-                    <option value="Jateng">Jawa Tengah</option>
-                    <option value="Yogyakarta">Yogyakarta</option>
-                    <option value="Jatim">Jawa Timur</option>
-                    <option value="Kalbar">Kalimantan Barat</option>
-                    <option value="Kalteng">Kalimantan Tengah</option>
-                    <option value="Kalsel">Kalimantan Selatan</option>
-                    <option value="Kaltim">Kalimantan Timur</option>
-                    <option value="Kaltra">Kalimantan Utara</option>
-                    <option value="Bali">Bali</option>
-                    <option value="NTT">Nusa Tenggara Timur</option>
-                    <option value="NTB">Nusa Tenggara Barat</option>
-                    <option value="Sulut">Sulawesi Utara</option>
-                    <option value="Sulteng">Sulawesi Tengah</option>
-                    <option value="Sulsel">Sulawesi Selatan</option>
-                    <option value="Sultengg">Sulawesi Tenggara</option>
-                    <option value="Sulbar">Sulawesi Barat</option>
-                    <option value="Gorontalo">Gorontalo</option>
-                    <option value="Maluku">Maluku</option>
-                    <option value="Maluku Utara">Maluku Utara</option>
-                    <option value="Papua">Papua</option>
-                    <option value="Papua Barat">Papua Barat</option>
-                </select>
+                <input type="text" name="provinsi" id="provinsi"
+                    value="@isset($edit) {{ $data->provinsi }} @endisset">
             </div>
             <div class="input-container">
                 <label for="alamat" class="font-size-18 font-w-medium mb-2">Alamat</label>
-                <input type="text" id="alamat" name="alamat" class="font-size-18">
+                <input type="text" id="alamat" name="alamat" class="font-size-18"
+                    value="@isset($edit) {{ $data->alamat }} @endisset">
             </div>
             <div class="input-container">
                 <label for="deskripsi" class="font-size-18 font-w-medium mb-2">Deskripsi</label>
-                <textarea type="text" id="deskripsi" name="deskripsi" class="font-size-18" rows="5"></textarea>
+                <textarea type="text" id="deskripsi" name="deskripsi" class="font-size-18" rows="5">
+@isset($edit)
+{{ $data->deskripsi }}
+@endisset
+</textarea>
             </div>
             <div class="input-container ">
                 <label for="foto" class="font-size-18 font-w-medium mb-2">Foto</label>
                 <div class="input-file-wrapper">
-                    <img src="" alt="image-preview" id="img-preview">
-                    <p class="file-name mt-0-5 gray-text font-size-13 mb-2" style="display: none"></p>
+                    <img src="@isset($edit) {{ url('/') . '/storage/images/' . $data->foto }} @endisset"
+                        alt="image-preview" id="img-preview">
+                    <p class="file-name mt-0-5 gray-text font-size-13 mb-2"
+                        style="@empty($edit) display:none @endempty">
+                        @isset($edit)
+                            {{ $data->foto }}
+                        @endisset
+                    </p>
                     <div class="input-file-container ">
                         <input type="file" id="foto" name="foto" class="font-size-18" onchange="inputFileAction(this)"
                             accept="image/*">
@@ -116,7 +96,13 @@
                 </div>
             </div>
             <div class="text-end">
-                <button type="submit" class="btn primary-btn font-size-18">Tambahkan</button>
+                <button type="submit" class="btn primary-btn font-size-18">
+                    @isset($edit)
+                        Edit
+                    @else
+                        Tambahkan
+                    @endisset
+                </button>
             </div>
         </form>
     </div>
@@ -128,10 +114,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-        @if (count($errors) > 0)
-            $('#exampleModal').modal('show');
-        @endif
-
         function inputFileAction(e) {
             const [file] = e.files
             if (file) {

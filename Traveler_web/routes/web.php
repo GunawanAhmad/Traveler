@@ -30,9 +30,14 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/daftar_wisata', [DaftarWisataController::class, 'index'])->middleware('auth');
 
+Route::get('/edit_wisata/{id}', [DaftarWisataController::class, 'edit_wisata_view'])->middleware('auth');
+
+Route::post('/edit_wisata/{id}', [DaftarWisataController::class, 'edit_wisata'])->middleware('auth');
+
 Route::post('/tambah_wisata', [DaftarWisataController::class, 'store'])->middleware('auth');
 
 Route::get('/tambah_wisata', [DaftarWisataController::class, 'tambah_wisata_view'])->middleware('auth');
+
 Route::delete('/hapus_wisata', [DaftarWisataController::class, 'hapus_wisata'])->Middleware('auth');
 
 
@@ -40,14 +45,16 @@ Route::get('/request_guide', function () {
     return view('request_guide');
 })->middleware('auth');
 
+
 Route::get('/daftar_guide', function () {
     return view('daftar_guide');
 })->middleware('auth');
 
-Route::get('/Edit_Akun', function () {
-    return view('Edit_Akun');
+Route::get('/daftar_guide/{id}', function () {
+    return view('Info_guide');
 })->middleware('auth');
 
-Route::get('/Info_guide', function () {
-    return view('Info_guide');
+
+Route::get('/Edit_Akun', function () {
+    return view('Edit_Akun');
 })->middleware('auth');

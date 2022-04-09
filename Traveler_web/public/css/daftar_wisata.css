@@ -53,7 +53,8 @@
     gap: 1rem;
 }
 
-.wisata-container .action-btn button {
+.wisata-container .action-btn button,
+.wisata-container .action-btn a {
     background: #dadada;
     border: none;
     outline: none;
@@ -65,7 +66,9 @@
 }
 
 .wisata-container .action-btn button:hover,
-.wisata-container .action-btn button:focus {
+.wisata-container .action-btn button:focus,
+.wisata-container .action-btn a:hover,
+.wisata-container .action-btn a:focus {
     background-color: var(--clr-primary);
     color: white;
 }
