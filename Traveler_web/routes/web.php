@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DaftarWisataController;
 use App\Http\Controllers\LoginController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::get('/daftar_wisata', [DaftarWisataController::class, 'index'])->middlewa
 Route::post('/tambah_wisata', [DaftarWisataController::class, 'store'])->middleware('auth');
 
 Route::get('/tambah_wisata', [DaftarWisataController::class, 'tambah_wisata_view'])->middleware('auth');
+Route::delete('/hapus_wisata', [DaftarWisataController::class, 'hapus_wisata'])->Middleware('auth');
 
 
 Route::get('/request_guide', function () {

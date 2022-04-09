@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DaftarWisata;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -34,5 +34,12 @@ class DaftarWisataController extends Controller
 
     function tambah_wisata_view() {
         return view('tambah_wisata');
+    }
+
+    function hapus_wisata(Request $request) {
+        $id = $request->id;
+        $wisata = DaftarWisata::find($id);
+        $wisata->delete();
+        return response()->json(['succes' => 'Daftar wisata berhasil dihapus']);
     }
 }
