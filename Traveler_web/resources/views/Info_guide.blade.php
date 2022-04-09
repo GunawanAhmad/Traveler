@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('css/daftar_guide.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Info_guide.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
@@ -24,35 +24,17 @@
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Data Tour Guide</h1>
         <ul>
             <li class="wisata-container">
-                <a href="Info_guide">
+                <a href="">
                     <img src="{{ asset('img/fotoAndira.jpg') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Andira K.</p>
+                        <p class="font-size-16 font-w-bold mb-1">Nama : Andira K.</p><br>
+                        <p class="font-size-16">Umur : 22</p><br>
+                        <p class="font-size-16">Email : Andira@gmail.com</p><br>
+                        <p class="font-size-16">No HP : 0822130201</p><br>
                         <p class="gray-text"><span>
                                 <i class="fa-solid fa-location-dot"></i></span>  Lombok, Nusa Tenggara Barat</p>
                     </div>
                 </a>
-            </li>
-            <li class="wisata-container">
-                <a href="Info_guide">
-                    <img src="{{ asset('img/fotoangel.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Angel C.</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
-                    </div>
-                </a>
-            </li>
-            <li class="wisata-container">
-                <a href="Info_guide">
-                    <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Sakaa K.</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
-                    </div>
-                </a>
-                </div>
             </li>
         </ul>
     </div>
