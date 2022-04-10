@@ -14,28 +14,30 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/Info_guide.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 
-{{-- Nanti info dirubah ke database tergantung yang di klik guidenya  --}}
+
 <body>
     <div class="container">
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Data Tour Guide</h1>
         <ul>
             <li class="wisata-container">
-                <a href="">
+                <a>
                     <img src="{{ asset('img/fotoAndira.jpg') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-16 font-w-bold mb-1">Nama : Andira K.</p><br>
-                        <p class="font-size-16">Umur : 22</p><br>
-                        <p class="font-size-16">Email : Andira@gmail.com</p><br>
-                        <p class="font-size-16">No HP : 0822130201</p><br>
+                        <p class="font-size-16 font-w-bold mb-1">Nama : {{ $guide->name }}</p><br>
+                        <p class="font-size-16">Umur : {{ $guide->age() }}</p><br>
+                        <p class="font-size-16">Email : {{ $guide->email }}</p><br>
+                        <p class="font-size-16">No HP : {{ $guide->no_hp }}</p><br>
                         <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span>  Lombok, Nusa Tenggara Barat</p>
+                                <i class="fa-solid fa-location-dot"></i></span> {{ $guide->alamat }}</p>
                     </div>
                 </a>
             </li>
         </ul>
     </div>
+
 </html>

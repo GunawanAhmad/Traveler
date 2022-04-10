@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DaftarWisataController;
+use App\Http\Controllers\GuideController;
 use App\Http\Controllers\LoginController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -46,13 +47,9 @@ Route::get('/request_guide', function () {
 })->middleware('auth');
 
 
-Route::get('/daftar_guide', function () {
-    return view('daftar_guide');
-})->middleware('auth');
+Route::get('/daftar_guide', [GuideController::class, 'index'])->middleware('auth');
 
-Route::get('/daftar_guide/{id}', function () {
-    return view('Info_guide');
-})->middleware('auth');
+Route::get('/daftar_guide/{id}', [GuideController::class, 'detail_guide'])->middleware('auth');
 
 
 Route::get('/Edit_Akun', function () {
