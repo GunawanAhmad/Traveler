@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\requestTourGuideController;
 use App\Http\Controllers\DaftarWisataController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\LoginController;
@@ -42,10 +43,7 @@ Route::get('/tambah_wisata', [DaftarWisataController::class, 'tambah_wisata_view
 Route::delete('/hapus_wisata', [DaftarWisataController::class, 'hapus_wisata'])->Middleware('auth');
 
 
-Route::get('/request_guide', function () {
-    return view('request_guide');
-})->middleware('auth');
-
+Route::get('/request_guide', [requestTourGuideController::class, 'requestTourGuide'])->middleware('auth');
 
 Route::get('/daftar_guide', [GuideController::class, 'index'])->middleware('auth');
 
