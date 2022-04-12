@@ -20,13 +20,14 @@
     <div class="container">
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Daftar Request</h1>
         <ul>
+            @foreach ($data as $dataguide)
             <li class="wisata-container">
                 <a href="">
                     <img src="{{ asset('img/fotoAndira.jpg') }}" alt="">
                     <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Andira K.</p>
+                        <p class="font-size-24 font-w-bold mb-1">{{ $dataguide->name }}</p>
                         <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span>  Lombok, Nusa Tenggara Barat</p>
+                                <i class="fa-solid fa-location-dot"></i></span>{{ $dataguide->alamat }}</p>
                     </div>
                 </a>
                 <div class="action-btn" style="color:yellow">
@@ -38,42 +39,7 @@
                     </button>
                 </div>
             </li>
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/fotoangel.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Angel C.</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
-                    </div>
-                </a>
-                <div class="action-btn">
-                    <button>
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-x"></i>
-                    </button>
-                </div>
-            </li>
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">Sakaa K.</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span> Lombok, Nusa Tenggara Barat</p>
-                    </div>
-                </a>
-                <div class="action-btn">
-                    <button>
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-x"></i>
-                    </button>
-                </div>
-            </li>
+            @endforeach
         </ul>
     </div>
 </body>
