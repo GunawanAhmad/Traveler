@@ -31,12 +31,22 @@
                     </div>
                 </a>
                 <div class="action-btn" style="color:yellow">
-                    <button>
+                    <form action="acc/{{$dataguide->id}}" method="POST">
+                    @csrf
+                     <button type="submit">
+
                         <i class="fa-solid fa-check"></i>
                     </button>
-                    <button>
+                    </form>
+                    
+                   <form action="reject/{{$dataguide->id}}" method="POST">
+                    @csrf
+                    <button type="submit">
                         <i class="fa-solid fa-x"></i>
+
                     </button>
+                   </form>
+                    
                 </div>
             </li>
             @endforeach

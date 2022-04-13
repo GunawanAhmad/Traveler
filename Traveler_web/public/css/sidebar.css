@@ -9,7 +9,7 @@ body {
 #sidebar {
     min-height: 100vh;
     background-color: var(--clr-primary);
-    max-width: 250px;
+    max-width: 200px;
     padding: 3rem 1rem 2rem 1rem;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -29,24 +29,28 @@ body {
 }
 
 #sidebar .img-container {
-    min-height: 70px;
-    min-width: 70px;
+    min-height: 80px;
+    min-width: 80px;
     border-radius: 50%;
     background-color: var(--clr-gray);
 }
 
 #sidebar .img-container img {
-    min-height: 100%;
-    min-width: 100%;
+    height: 80px;
+    width: 80px;
+    
+    border-radius: 50%;
 }
 
 #sidebar .img-container img[src=""] {
-    display: none;
+    
+    min-height: 10px;
+    min-width: 10px;
 }
 
 #sidebar .user-info {
     border-bottom: 1px solid white;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 #sidebar ul li {

@@ -20,15 +20,17 @@
 
     <div class="container">
 
-        <h1 class="font-size-62  font-w-bold">Edit Akun</h1>
+        <h5 class="font-size-72  font-w-bold b-line b-line-mid ">Edit Akun</h5>
             <br>
             <br>
             <div class="user-info flex flex center">
                 <div class="img-container">
                 <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="" >
                 </div>
-                <div class="ml-2">
-                    <p class="font-w-bold font-size-18 text-black mb-1">Namamu</p>
+                <div  class="ml-2" style ="margin-right : 5rem"  >
+                    <br>
+                    <br>
+                    <p class="font-w-bold font-size-18 text-black mb-1 ">Namamu</p>
                     <p class="font-size-13 text-black">Administrator</p>
                 </div>
             </div>
@@ -58,7 +60,7 @@
                 </div>
             </div>
             <div class="text-end">
-                <button class="btn primary-btn font-size-18">Tambahkan</button>
+                <button class="btn primary-btn font-size-18 ">Edit Foto</button>
             </div>
         </form>
     </div>
