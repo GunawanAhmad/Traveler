@@ -21,24 +21,30 @@
         <h1 class="font-size-72 b-line b-line-mid font-w-bold">Daftar Request</h1>
         <ul>
             @foreach ($data as $dataguide)
-            <li class="wisata-container">
-                <a href="">
-                    <img src="{{ asset('img/fotoAndira.jpg') }}" alt="">
-                    <div class="tempat-info">
-                        <p class="font-size-24 font-w-bold mb-1">{{ $dataguide->name }}</p>
-                        <p class="gray-text"><span>
-                                <i class="fa-solid fa-location-dot"></i></span>{{ $dataguide->alamat }}</p>
+                <li class="wisata-container">
+                    <a href="">
+                        <img src="{{ asset('img/fotoAndira.jpg') }}" alt="">
+                        <div class="tempat-info">
+                            <p class="font-size-24 font-w-bold mb-1">{{ $dataguide->name }}</p>
+                            <p class="gray-text"><span>
+                                    <i class="fa-solid fa-location-dot"></i></span>{{ $dataguide->alamat }}</p>
+                        </div>
+                    </a>
+                    <div class="action-btn" style="color:yellow">
+                        <form action="/acc/{{ $dataguide->id }}" method="POST">
+                            @csrf
+                            <button type="submit">
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                        </form>
+                        <form action="/reject/{{ $dataguide->id }}" method="POST">
+                            @csrf
+                            <button type="submit">
+                                <i class="fa-solid fa-x"></i>
+                            </button>
+                        </form>
                     </div>
-                </a>
-                <div class="action-btn" style="color:yellow">
-                    <button>
-                        <i class="fa-solid fa-check"></i>
-                    </button>
-                    <button>
-                        <i class="fa-solid fa-x"></i>
-                    </button>
-                </div>
-            </li>
+                </li>
             @endforeach
         </ul>
     </div>

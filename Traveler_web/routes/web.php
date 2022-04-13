@@ -49,6 +49,9 @@ Route::get('/daftar_guide', [GuideController::class, 'index'])->middleware('auth
 
 Route::get('/daftar_guide/{id}', [GuideController::class, 'detail_guide'])->middleware('auth');
 
+Route::post('/acc/{id}', [requestTourGuideController::class, 'acc'])->middleware('auth');
+Route::post('/reject/{id}', [requestTourGuideController::class, 'reject'])->middleware('auth');
+
 
 Route::get('/Edit_Akun', function () {
     return view('Edit_Akun');
