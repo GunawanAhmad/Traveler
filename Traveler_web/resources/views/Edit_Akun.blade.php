@@ -21,32 +21,36 @@
     <div class="container">
 
         <h5 class="font-size-72  font-w-bold b-line b-line-mid ">Edit Akun</h5>
-            <br>
-            <br>
-            <div class="user-info flex flex center">
-                <div class="img-container">
-                <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="" >
-                </div>
-                <div  class="ml-2" style ="margin-right : 5rem"  >
-                    <br>
-                    <br>
-                    <p class="font-w-bold font-size-18 text-black mb-1 ">Namamu</p>
-                    <p class="font-size-13 text-black">Administrator</p>
-                </div>
+        <br>
+        <br>
+        <div class="user-info flex flex center">
+            <div class="img-container">
+                <img src="{{ url('/') . '/storage/images/' . $adminData->foto }}" alt="">
             </div>
-        <form action="" class="form">
+            <div class="ml-2" style="margin-right : 5rem">
+                <br>
+                <br>
+                <p class="font-w-bold font-size-18 text-black mb-1 ">{{ $adminData->name }}</p>
+                <p class="font-size-13 text-black">Administrator</p>
+            </div>
+        </div>
+        <form action="/edit_akun" method="POST" class="form" enctype="multipart/form-data">
+            @csrf
             <div class="input-container">
-                <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Nama Profil</label>
-                <input type="text" id="nama_daerah" name="nama_daerah" class="font-size-18">
+                <label for="nama" class="font-size-18 font-w-medium mb-2">Nama Profil</label>
+                <input type="text" id="nama" name="nama" class="font-size-18" value="{{ $adminData->name }}">
             </div>
             <div class="input-container ">
                 <label for="nama_daerah" class="font-size-18 font-w-medium mb-2">Foto</label>
                 <div class="input-file-wrapper">
-                    <img src="" alt="image-preview" id="img-preview">
-                    <p class="file-name mt-0-5 gray-text font-size-13 mb-2" style="display: none"></p>
+                    <img src="{{ url('/') . '/storage/images/' . $adminData->foto }}" alt="image-preview"
+                        id="img-preview">
+                    <p class="file-name mt-0-5 gray-text font-size-13 mb-2"
+                        style="@empty($adminData->foto) display:none @endempty">{{ $adminData->foto }}
+                    </p>
                     <div class="input-file-container ">
-                        <input type="file" id="nama_daerah" name="nama_daerah" class="font-size-18"
-                            onchange="inputFileAction(this)" accept="image/*">
+                        <input type="file" id="foto" name="foto" class="font-size-18" onchange="inputFileAction(this)"
+                            accept="image/*">
                         <div class="text-center">
                             <div class="icon font-size-24">
                                 <i class="fa-solid fa-file-image "></i>
@@ -60,11 +64,20 @@
                 </div>
             </div>
             <div class="text-end">
-                <button class="btn primary-btn font-size-18 ">Edit Foto</button>
+                <button class="btn primary-btn font-size-18" type="submit">Edit akun</button>
             </div>
         </form>
     </div>
-
+    <script>
+        function inputFileAction(e) {
+            const [file] = e.files
+            if (file) {
+                document.querySelector("#img-preview").setAttribute("src", URL.createObjectURL(file));
+                document.querySelector('.file-name').innerText = e.files[0].name
+                document.querySelector('.file-name').style.display = 'block'
+            }
+        }
+    </script>
 
 </body>
 

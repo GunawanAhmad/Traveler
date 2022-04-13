@@ -21,7 +21,7 @@
         <div>
             <div class="user-info flex flex-center justify-content-between">
                 <div class="img-container">
-                <img src="{{ asset('img/fotoSaaka.jpg') }}" alt="" >
+                    <img src="{{ url('/') . '/storage/images/' . auth()->user()->foto }}" alt="">
                 </div>
                 <div class="ml-1">
                     <p class="font-w-bold font-size-18 text-white mb-1">{{ auth()->user()->name }}</p>

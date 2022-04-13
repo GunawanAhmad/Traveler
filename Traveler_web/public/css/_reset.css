@@ -136,3 +136,8 @@ table {
 a {
     text-decoration: none;
 }
+
+button,
+p {
+    word-wrap: break-word;
+}

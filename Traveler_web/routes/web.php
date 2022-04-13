@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAkunController;
 use App\Http\Controllers\requestTourGuideController;
 use App\Http\Controllers\DaftarWisataController;
 use App\Http\Controllers\GuideController;
@@ -53,6 +54,6 @@ Route::post('/acc/{id}', [requestTourGuideController::class, 'acc'])->middleware
 Route::post('/reject/{id}', [requestTourGuideController::class, 'reject'])->middleware('auth');
 
 
-Route::get('/Edit_Akun', function () {
-    return view('Edit_Akun');
-})->middleware('auth');
+Route::get('/Edit_Akun', [AdminAkunController::class, 'edit_view'])->middleware('auth');
+
+Route::post('/edit_akun', [AdminAkunController::class, 'edit_akun'])->middleware('auth');
