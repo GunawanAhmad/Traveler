@@ -7,7 +7,7 @@ Fitur Tambah Wisata
 Fitur Request Tourguide
 
 3.Diaz Tiyasya Putra
-fitur Data & Info Tourguide 
+fitur Daftar guide& Info Tourguide 
 
 4.Rafly Athalla Farizan
 Fitur Edit akun 
