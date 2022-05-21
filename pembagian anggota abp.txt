@@ -1,0 +1,14 @@
+1.Gunawan Nur Ahmad
+Fitur Login
+Fitur Daftar Wisata
+Fitur Tambah Wisata
+
+2. Syafiq Muhammad A.
+Fitur Request Tourguide
+
+3.Diaz Tiyasya Putra
+fitur Daftar guide& Info Tourguide 
+
+4.Rafly Athalla Farizan
+Fitur Edit akun 
+Fitur Sidebar
