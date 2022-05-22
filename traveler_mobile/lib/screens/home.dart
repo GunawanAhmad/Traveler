@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:traveler_mobile/screens/login.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -29,7 +30,10 @@ class Home extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 50, top: 30),
             child: MaterialButton(
               padding: const EdgeInsets.all(15),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Login()));
+              },
               color: const Color(0xC4C4C4).withOpacity(0.5),
               textColor: Colors.white,
               child: const Icon(
