@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/Style/style.dart';
-import 'package:traveler_mobile/screens/dashboard.dart';
-import 'package:traveler_mobile/screens/register.dart';
+import 'package:traveler_mobile/screens/login.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class Register extends StatelessWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +38,34 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             children: <Widget>[
               const Center(
                 child: Text(
-                  "Login",
+                  "Register",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 32,
                       fontWeight: FontWeight.bold),
                 ),
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Enter your name',
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Enter your phone number',
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your phone number';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 decoration: const InputDecoration(
@@ -81,29 +102,26 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     // the form is invalid.
                     if (_formKey.currentState!.validate()) {
                       // Process data.
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Dashboard()));
+
                     }
                   },
-                  child: const Text('Login'),
+                  child: const Text('Register'),
                   style: ElevatedButton.styleFrom(primary: Colors.black),
                 )),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?"),
+                  const Text("Already have an account?"),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Register()));
+                                builder: (context) => const Login()));
                       },
                       child: const Text(
-                        "Register",
+                        "Login",
                         style: TextStyle(color: Colors.black),
                       ))
                 ],
@@ -114,7 +132,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 
-enum LoginType { user, guide }
+enum RegisterType { user, guide }
 
 class RadioGroup extends StatefulWidget {
   const RadioGroup({Key? key}) : super(key: key);
@@ -124,7 +142,7 @@ class RadioGroup extends StatefulWidget {
 }
 
 class _RadioGroupState extends State<RadioGroup> {
-  LoginType? type = LoginType.user;
+  RegisterType? type = RegisterType.user;
 
   @override
   Widget build(BuildContext context) {
@@ -133,10 +151,10 @@ class _RadioGroupState extends State<RadioGroup> {
         Expanded(
           child: RadioListTile(
             title: const Text("Tour guide"),
-            value: LoginType.guide,
+            value: RegisterType.guide,
             groupValue: type,
             activeColor: Colors.black,
-            onChanged: (LoginType? value) {
+            onChanged: (RegisterType? value) {
               setState(() {
                 type = value;
               });
@@ -146,10 +164,10 @@ class _RadioGroupState extends State<RadioGroup> {
         Expanded(
           child: RadioListTile(
             title: const Text("User"),
-            value: LoginType.user,
+            value: RegisterType.user,
             groupValue: type,
             activeColor: Colors.black,
-            onChanged: (LoginType? value) {
+            onChanged: (RegisterType? value) {
               setState(() {
                 type = value;
               });

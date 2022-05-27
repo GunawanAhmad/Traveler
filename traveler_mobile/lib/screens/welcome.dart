@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/screens/login.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Welcome extends StatelessWidget {
+  const Welcome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
