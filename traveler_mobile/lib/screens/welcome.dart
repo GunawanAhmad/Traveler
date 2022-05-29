@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traveler_mobile/screens/login.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -30,8 +29,7 @@ class Welcome extends StatelessWidget {
             child: MaterialButton(
               padding: const EdgeInsets.all(15),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Login()));
+                Navigator.pushNamed(context, '/login');
               },
               color: const Color(0xC4C4C4).withOpacity(0.5),
               textColor: Colors.white,

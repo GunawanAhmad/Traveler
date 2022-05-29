@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traveler_mobile/Style/style.dart';
-import 'package:traveler_mobile/screens/dashboard.dart';
-import 'package:traveler_mobile/screens/register.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -81,10 +78,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     // the form is invalid.
                     if (_formKey.currentState!.validate()) {
                       // Process data.
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Dashboard()));
+                      Navigator.pushNamed(context, '/dashboard');
                     }
                   },
                   child: const Text('Login'),
@@ -97,10 +91,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   const Text("Don't have an account?"),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Register()));
+                        Navigator.pushNamed(context, '/register');
                       },
                       child: const Text(
                         "Register",
