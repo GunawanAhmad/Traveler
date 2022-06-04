@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:traveler_mobile/screens/dashboard.dart';
+import 'package:traveler_mobile/screens/user/daftar_guide.dart';
+import 'package:traveler_mobile/screens/user/dashboard_user.dart';
 import 'package:traveler_mobile/screens/register.dart';
+import 'package:traveler_mobile/screens/user/detail_guide.dart';
 import 'package:traveler_mobile/screens/welcome.dart';
 import 'package:traveler_mobile/screens/login.dart';
 
@@ -13,11 +15,16 @@ class Traveler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(routes: {
-      '/': (context) => const Welcome(),
-      '/login': (context) => const Login(),
-      '/register': (context) => const Register(),
-      '/dashboard': (context) => const Dashboard(),
-    });
+    return MaterialApp(
+      routes: {
+        '/': (context) => const Welcome(),
+        '/login': (context) => const Login(),
+        '/register': (context) => const Register(),
+        '/dashboardUser': (context) => const Dashboard(),
+        '/daftarguide': (context) => DaftarGuideUser(),
+        '/user/detailguide': (context) => const DetailGuideUser()
+      },
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

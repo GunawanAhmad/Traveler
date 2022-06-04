@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+enum LoginType { user, guide }
+
+LoginType selectedUser = LoginType.user;
+
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -78,7 +82,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     // the form is invalid.
                     if (_formKey.currentState!.validate()) {
                       // Process data.
-                      Navigator.pushNamed(context, '/dashboard');
+                      if (selectedUser == LoginType.user) {
+                        Navigator.pushNamed(context, '/dashboardUser');
+                      }
                     }
                   },
                   child: const Text('Login'),
@@ -105,8 +111,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 
-enum LoginType { user, guide }
-
 class RadioGroup extends StatefulWidget {
   const RadioGroup({Key? key}) : super(key: key);
 
@@ -130,6 +134,7 @@ class _RadioGroupState extends State<RadioGroup> {
             onChanged: (LoginType? value) {
               setState(() {
                 type = value;
+                selectedUser = value!;
               });
             },
           ),
@@ -143,6 +148,7 @@ class _RadioGroupState extends State<RadioGroup> {
             onChanged: (LoginType? value) {
               setState(() {
                 type = value;
+                selectedUser = value!;
               });
             },
           ),

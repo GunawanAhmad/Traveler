@@ -1,5 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:traveler_mobile/screens/user/explore.dart';
+import 'package:traveler_mobile/screens/user/home.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -10,11 +12,11 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text("Home"),
-    Text("Explore"),
-    Text("Favorites"),
-    Text("Profile"),
+  static final List<Widget> _widgetOptions = <Widget>[
+    HomeUser(),
+    ExploreUser(),
+    const Text("Favorites"),
+    const Text("Profile"),
   ];
 
   void _onItemTapped(int index) {
@@ -39,14 +41,17 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
             label: 'Explore',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favorites',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
+            backgroundColor: Colors.black,
           ),
         ],
         currentIndex: _selectedIndex,
