@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import "../../type.dart";
 
-class ExploreUser extends StatelessWidget {
-  ExploreUser({Key? key}) : super(key: key);
+class FavoriteUser extends StatelessWidget {
+  FavoriteUser({Key? key}) : super(key: key);
 
   final List<Wisata> daftarWisata = [
     Wisata("Bandung", "Bandung, Indonesia",
@@ -15,10 +15,6 @@ class ExploreUser extends StatelessWidget {
         "https://source.unsplash.com/7od8rzWvUVU"),
   ];
 
-  void daftarGuideScreen(context) {
-    Navigator.pushNamed(context, '/daftarguide');
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,7 +25,7 @@ class ExploreUser extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Explore wisata",
+              "Favorite",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
             ),
             Container(
@@ -41,9 +37,7 @@ class ExploreUser extends StatelessWidget {
                 itemCount: daftarWisata.length,
                 itemBuilder: (BuildContext context, int index) {
                   return TextButton(
-                    onPressed: () {
-                      daftarGuideScreen(context);
-                    },
+                    onPressed: () {},
                     child: Container(
                         padding: const EdgeInsets.only(bottom: 10),
                         width: MediaQuery.of(context).size.width * 1,

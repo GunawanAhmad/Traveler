@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/screens/user/explore.dart';
 import 'package:traveler_mobile/screens/user/home.dart';
+import 'package:traveler_mobile/screens/user/favorite.dart';
+import 'package:traveler_mobile/screens/user/profile.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -15,8 +17,8 @@ class _DashboardState extends State<Dashboard> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeUser(),
     ExploreUser(),
-    const Text("Favorites"),
-    const Text("Profile"),
+    FavoriteUser(),
+    ProfileUser(),
   ];
 
   void _onItemTapped(int index) {
