@@ -6,11 +6,11 @@ class FavoriteUser extends StatelessWidget {
 
   final List<Wisata> daftarWisata = [
     Wisata("Bandung", "Bandung, Indonesia",
-        "https://source.unsplash.com/7od8rzWvUVU"),
+        "https://images.unsplash.com/photo-1634300361357-4a41334a778d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
     Wisata("Bandung", "Bandung, Indonesia",
         "https://source.unsplash.com/7od8rzWvUVU"),
     Wisata("Bandung", "Bandung, Indonesia",
-        "https://source.unsplash.com/7od8rzWvUVU"),
+        "https://images.unsplash.com/photo-1627999490849-0ab41c1b215a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJhbmR1bmclMjBjaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
     Wisata("Bandung", "Bandung, Indonesia",
         "https://source.unsplash.com/7od8rzWvUVU"),
   ];
