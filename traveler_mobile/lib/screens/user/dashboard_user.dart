@@ -14,7 +14,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    Explore(),
+    HomeUser(),
     ExploreUser(),
     FavoriteUser(),
     const Text("Profile"),
