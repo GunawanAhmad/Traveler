@@ -5,17 +5,11 @@ class Profile extends StatelessWidget {
   Profile({Key? key}) : super(key: key);
 
   final List<Wisata> daftarWisata = [
-    Wisata("Syafiq Muhamaad", "Bandung, Indonesia",
-        "https://source.unsplash.com/7od8rzWvUVU"),
+    Wisata("Kuple", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+        
   ];
 
-  void daftarGuideScreen(context) {
-    Navigator.pushNamed(context, '/daftarguide');
-  }
-
-  void detailGuideScreen(context, argument) {
-    Navigator.pushNamed(context, '/user/detailguide', arguments: argument);
-  }
 
   @override
   Widget build(BuildContext context) {
