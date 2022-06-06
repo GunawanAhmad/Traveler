@@ -6,7 +6,7 @@ class ExploreUser extends StatelessWidget {
 
   final List<Wisata> daftarWisata = [
     Wisata("Bandung", "Bandung, Indonesia",
-      "https://source.unsplash.com/7od8rzWvUVU"),
+        "https://images.unsplash.com/photo-1549473889-14f410d83298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
     Wisata("Bandung", "Bandung, Indonesia",
         "https://images.unsplash.com/photo-1617234084793-11a2b9345949?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
     Wisata("Bandung", "Bandung, Indonesia",
