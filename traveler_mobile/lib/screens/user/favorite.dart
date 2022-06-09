@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/screens/user/detail_guide.dart';
+import 'package:traveler_mobile/screens/user/wisata_favorite.dart';
 import "../../type.dart";
 
 class FavoriteUser extends StatelessWidget {
@@ -15,22 +16,18 @@ class FavoriteUser extends StatelessWidget {
     Wisata("Bandung", "Bandung, Indonesia",
         "https://source.unsplash.com/7od8rzWvUVU"),
   ];
-  final List<Guide> daftarGuide = [
-    Guide("John Doe", "Bandung, Indonesia",
-        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
-    Guide("John Doe", "Bandung, Indonesia",
-        "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
-    Guide("John Doe", "Bandung, Indonesia",
-        "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
-    Guide("John Doe", "Bandung, Indonesia",
-        "https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFzaWFuJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
-    Guide("John Doe", "Bandung, Indonesia",
-        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
-    Guide("John Doe", "Bandung, Indonesia",
-        "https://source.unsplash.com/IF9TK5Uy-KI"),
+  final List<Guide> Wisatafavorite = [
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1634300361357-4a41334a778d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://source.unsplash.com/7od8rzWvUVU"),
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1627999490849-0ab41c1b215a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJhbmR1bmclMjBjaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://source.unsplash.com/7od8rzWvUVU"),
   ];
-  void detailGuideScreen(context, argument) {
-    Navigator.pushNamed(context, '/user/detailguide', arguments: argument);
+  void WisataFavorite(context, argument) {
+    Navigator.pushNamed(context, '/wisatafavorite', arguments: argument);
   }
 
   @override
@@ -56,7 +53,7 @@ class FavoriteUser extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return TextButton(
                     onPressed: () {
-                      detailGuideScreen(context, daftarGuide[index]);
+                      WisataFavorite(context, Wisatafavorite[index]);
                     },
                     child: Container(
                         padding: const EdgeInsets.only(bottom: 10),
