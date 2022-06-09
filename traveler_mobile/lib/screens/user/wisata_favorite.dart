@@ -58,7 +58,7 @@ class WisataFavorite extends StatelessWidget {
                       // Validate will return true if the form is valid, or false if
                       // the form is invalid.
                     },
-                    child: const Text('Pesan Guide'),
+                    child: const Text('Pesan Destinasi'),
                     style: ElevatedButton.styleFrom(primary: Colors.black),
                   )),
                 )
