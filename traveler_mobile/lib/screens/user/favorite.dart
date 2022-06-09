@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveler_mobile/screens/user/detail_guide.dart';
 import "../../type.dart";
 
 class FavoriteUser extends StatelessWidget {
@@ -14,6 +15,23 @@ class FavoriteUser extends StatelessWidget {
     Wisata("Bandung", "Bandung, Indonesia",
         "https://source.unsplash.com/7od8rzWvUVU"),
   ];
+  final List<Guide> daftarGuide = [
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFzaWFuJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://source.unsplash.com/IF9TK5Uy-KI"),
+  ];
+  void detailGuideScreen(context, argument) {
+    Navigator.pushNamed(context, '/user/detailguide', arguments: argument);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +55,9 @@ class FavoriteUser extends StatelessWidget {
                 itemCount: daftarWisata.length,
                 itemBuilder: (BuildContext context, int index) {
                   return TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      detailGuideScreen(context, daftarGuide[index]);
+                    },
                     child: Container(
                         padding: const EdgeInsets.only(bottom: 10),
                         width: MediaQuery.of(context).size.width * 1,
