@@ -117,7 +117,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       },
                       child: const Text(
                         "Login",
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w600),
                       ))
                 ],
               )
@@ -142,32 +143,55 @@ class _RadioGroupState extends State<RadioGroup> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Expanded(
-          child: RadioListTile(
-            title: const Text("Tour guide"),
-            value: RegisterType.guide,
-            groupValue: type,
-            activeColor: Colors.black,
-            onChanged: (RegisterType? value) {
-              setState(() {
-                type = value;
-              });
-            },
-          ),
+        Row(
+          children: [
+            Radio(
+              value: RegisterType.guide,
+              groupValue: type,
+              activeColor: Colors.black,
+              onChanged: (RegisterType? value) {
+                setState(() {
+                  type = value;
+                });
+              },
+            ),
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    type = RegisterType.guide;
+                  });
+                },
+                child: const Text(
+                  "Guide",
+                  style: TextStyle(color: Colors.black),
+                ))
+          ],
         ),
-        Expanded(
-          child: RadioListTile(
-            title: const Text("User"),
-            value: RegisterType.user,
-            groupValue: type,
-            activeColor: Colors.black,
-            onChanged: (RegisterType? value) {
-              setState(() {
-                type = value;
-              });
-            },
-          ),
+        Row(
+          children: [
+            Radio(
+              value: RegisterType.user,
+              groupValue: type,
+              activeColor: Colors.black,
+              onChanged: (RegisterType? value) {
+                setState(() {
+                  type = value;
+                });
+              },
+            ),
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    type = RegisterType.user;
+                  });
+                },
+                child: const Text(
+                  "Customer",
+                  style: TextStyle(color: Colors.black),
+                ))
+          ],
         ),
       ],
     );

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 enum LoginType { user, guide }
 
@@ -28,6 +31,34 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  String email = "", password = "";
+
+  //fungsi untuk memanggil API
+  Future<http.Response> getData(data, url) async {
+    return await http.post(Uri.parse(url), body: jsonEncode(data), headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+    });
+  }
+
+  void login(context) async {
+    var data = {'email': email, 'password': password};
+    var res = await getData(data, 'http://127.0.0.1:8000/api/login/customer');
+
+    var body = json.decode(res.body);
+    if (body['meta']['code'] == 200) {
+      SharedPreferences.setMockInitialValues({});
+      SharedPreferences localStorage = await SharedPreferences.getInstance();
+      localStorage.setString('token', json.encode(body['data']['token']));
+      localStorage.setString('user', json.encode(body['data']['user']));
+      Navigator.pushNamed(context, '/dashboardUser');
+    } else {
+      final snackbar = SnackBar(
+        content: Text(body['meta']['message']),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +86,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
                   }
+                  email = value;
                   return null;
                 },
               ),
@@ -66,6 +98,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
                   }
+                  password = value;
                   return null;
                 },
               ),
@@ -83,7 +116,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     if (_formKey.currentState!.validate()) {
                       // Process data.
                       if (selectedUser == LoginType.user) {
-                        Navigator.pushNamed(context, '/dashboardUser');
+                        login(context);
                       }
                     }
                   },
@@ -101,7 +134,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       },
                       child: const Text(
                         "Register",
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w600),
                       ))
                 ],
               )
@@ -124,34 +158,55 @@ class _RadioGroupState extends State<RadioGroup> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Expanded(
-          child: RadioListTile(
-            title: const Text("Tour guide"),
-            value: LoginType.guide,
-            groupValue: type,
-            activeColor: Colors.black,
-            onChanged: (LoginType? value) {
-              setState(() {
-                type = value;
-                selectedUser = value!;
-              });
-            },
-          ),
+        Row(
+          children: [
+            Radio(
+              value: LoginType.guide,
+              groupValue: type,
+              activeColor: Colors.black,
+              onChanged: (LoginType? value) {
+                setState(() {
+                  type = value;
+                });
+              },
+            ),
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    type = LoginType.guide;
+                  });
+                },
+                child: const Text(
+                  "Guide",
+                  style: TextStyle(color: Colors.black),
+                ))
+          ],
         ),
-        Expanded(
-          child: RadioListTile(
-            title: const Text("User"),
-            value: LoginType.user,
-            groupValue: type,
-            activeColor: Colors.black,
-            onChanged: (LoginType? value) {
-              setState(() {
-                type = value;
-                selectedUser = value!;
-              });
-            },
-          ),
+        Row(
+          children: [
+            Radio(
+              value: LoginType.user,
+              groupValue: type,
+              activeColor: Colors.black,
+              onChanged: (LoginType? value) {
+                setState(() {
+                  type = value;
+                });
+              },
+            ),
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    type = LoginType.user;
+                  });
+                },
+                child: const Text(
+                  "Customer",
+                  style: TextStyle(color: Colors.black),
+                ))
+          ],
         ),
       ],
     );
