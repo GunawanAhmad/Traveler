@@ -5,13 +5,17 @@ class DaftarGuideUser extends StatelessWidget {
   DaftarGuideUser({Key? key}) : super(key: key);
 
   final List<Guide> daftarGuide = [
-    Guide("Bandung", "Bandung, Indonesia",
-        "https://source.unsplash.com/IF9TK5Uy-KI"),
-    Guide("Bandung", "Bandung, Indonesia",
-        "https://source.unsplash.com/IF9TK5Uy-KI"),
-    Guide("Bandung", "Bandung, Indonesia",
-        "https://source.unsplash.com/IF9TK5Uy-KI"),
-    Guide("Bandung", "Bandung, Indonesia",
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFzaWFuJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1525748822304-6807cb1348ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXNpYW4lMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+    Guide("John Doe", "Bandung, Indonesia",
         "https://source.unsplash.com/IF9TK5Uy-KI"),
   ];
 
