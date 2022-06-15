@@ -24,7 +24,10 @@ class CustomerController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return response()->json($validator->errors(), 400);
+                return ResponseFormatter::error([
+                    'message' => $validator->errors()->first(),
+                    'error' => "Something went wrong",
+                ],$validator->errors()->first() , 500);
             }
             $credentials = request(['email', 'password']);
             if (Auth::attempt($credentials)) {
@@ -58,17 +61,20 @@ class CustomerController extends Controller
     }
 
     public function register(Request $request)
-    {
+    {        
         try {
             $validator = Validator::make($request->all(), [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'min:3'],
-                'alamat' => ['required', 'max:255']
+                'alamat' => ['required', 'max:255'],
             ]);
 
             if ($validator->fails()) {
-                return response()->json($validator->errors(), 400);
+                return ResponseFormatter::error([
+                    'message' => $validator->errors()->first(),
+                    'error' => "Something went wrong",
+                ],$validator->errors()->first() , 500);
             }
 
             $user = User::create([
@@ -78,6 +84,12 @@ class CustomerController extends Controller
                 'password' => Hash::make($request->password),
                 'role' => 'customer'
             ]);
+
+            if ($request->hasFile('foto')) {
+                $fotoName = $request->file('foto')->hashName();
+                $request->file('foto')->store('public/images');
+                $user->update(['foto' => $fotoName]);
+            }
 
             $token = $user->createToken('authToken')->plainTextToken;
             return ResponseFormatter::success([
