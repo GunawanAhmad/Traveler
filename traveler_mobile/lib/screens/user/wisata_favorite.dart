@@ -50,17 +50,8 @@ class WisataFavorite extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: Center(
-                      child: ElevatedButton(
-                    onPressed: () {
-                      // Validate will return true if the form is valid, or false if
-                      // the form is invalid.
-                    },
-                    child: const Text('Pesan Destinasi'),
-                    style: ElevatedButton.styleFrom(primary: Colors.black),
-                  )),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
                 )
               ],
             ),
