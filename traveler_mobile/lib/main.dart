@@ -3,6 +3,7 @@ import 'package:traveler_mobile/screens/user/daftar_guide.dart';
 import 'package:traveler_mobile/screens/user/dashboard_user.dart';
 import 'package:traveler_mobile/screens/register.dart';
 import 'package:traveler_mobile/screens/user/detail_guide.dart';
+import 'package:traveler_mobile/screens/user/wisata_favorite.dart';
 import 'package:traveler_mobile/screens/welcome.dart';
 import 'package:traveler_mobile/screens/login.dart';
 
@@ -22,7 +23,8 @@ class Traveler extends StatelessWidget {
         '/register': (context) => const Register(),
         '/dashboardUser': (context) => const Dashboard(),
         '/daftarguide': (context) => DaftarGuideUser(),
-        '/user/detailguide': (context) => const DetailGuideUser()
+        '/user/detailguide': (context) => const DetailGuideUser(),
+        '/wisatafavorite': (context) => const WisataFavorite()
       },
       debugShowCheckedModeBanner: false,
     );
