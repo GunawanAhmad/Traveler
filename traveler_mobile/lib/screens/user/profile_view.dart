@@ -3,8 +3,6 @@ import './profile_model.dart';
 import '../colors.dart' as warna;
 
 class ProfileView extends ProfileModel {
-  get navigateSecondPage => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

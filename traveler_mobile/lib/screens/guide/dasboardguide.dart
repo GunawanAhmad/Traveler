@@ -18,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
     HomeUser(),
     ExploreUser(),
     FavoriteUser(),
-    Profile(),
+    const Profile(),
   ];
 
   void _onItemTapped(int index) {
