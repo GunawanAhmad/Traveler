@@ -41,9 +41,7 @@ class ExploreGuide extends StatelessWidget {
                 itemCount: daftarWisata.length,
                 itemBuilder: (BuildContext context, int index) {
                   return TextButton(
-                    onPressed: () {
-                      daftarGuideScreen(context);
-                    },
+                    onPressed: () {},
                     child: Container(
                         padding: const EdgeInsets.only(bottom: 10),
                         width: MediaQuery.of(context).size.width * 1,

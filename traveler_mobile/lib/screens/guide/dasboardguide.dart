@@ -40,7 +40,7 @@ class _DashboardGuideState extends State<DashboardGuide> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
-            label: 'Explore',
+            label: 'Work',
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
