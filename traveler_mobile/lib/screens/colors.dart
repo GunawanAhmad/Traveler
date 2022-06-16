@@ -12,3 +12,5 @@ Color lightgrey = Color.fromARGB(255, 209, 203, 188);
 Color darkgrey = Color.fromARGB(255, 110, 105, 102);
 Color black = Color.fromARGB(255, 0, 0, 0);
 Color lightblack = Color.fromARGB(255, 8, 8, 8);
+Color orange = Color.fromARGB(255, 253, 158, 68);
+Color orangee = Color.fromARGB(255, 150, 76, 16);

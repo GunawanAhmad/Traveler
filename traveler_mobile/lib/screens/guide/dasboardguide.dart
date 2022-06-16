@@ -39,7 +39,7 @@ class _DashboardGuideState extends State<DashboardGuide> {
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
+            icon: Icon(Icons.contacts),
             label: 'Work',
             backgroundColor: Colors.black,
           ),

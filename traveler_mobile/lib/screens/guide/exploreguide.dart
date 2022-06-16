@@ -80,7 +80,7 @@ class ExploreGuide extends StatelessWidget {
                           ],
                         ),
                         decoration: BoxDecoration(
-                            color: Colors.black54,
+                            color: Colors.orangeAccent,
                             borderRadius: BorderRadius.circular(10))),
                   );
                 },

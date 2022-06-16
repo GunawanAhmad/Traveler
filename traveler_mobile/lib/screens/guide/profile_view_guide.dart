@@ -14,7 +14,7 @@ class ProfileViewGuide extends ProfileModelGuide {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
-                  colors: [warna.grey, warna.darkgrey])),
+                  colors: [warna.orange, warna.orangee])),
         ),
         CustomScrollView(
           slivers: <Widget>[
@@ -87,7 +87,7 @@ class ProfileViewGuide extends ProfileModelGuide {
                                   borderRadius: BorderRadius.circular(200.0),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: warna.grey.withOpacity(.2),
+                                        color: warna.orange.withOpacity(.2),
                                         blurRadius: 10.0)
                                   ],
                                   color: warna.darkgrey),
@@ -110,7 +110,7 @@ class ProfileViewGuide extends ProfileModelGuide {
                                   borderRadius: BorderRadius.circular(200.0),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: warna.grey.withOpacity(.2),
+                                        color: warna.orange.withOpacity(.2),
                                         blurRadius: 10.0)
                                   ],
                                   color: warna.darkgrey),
@@ -133,7 +133,7 @@ class ProfileViewGuide extends ProfileModelGuide {
                                   borderRadius: BorderRadius.circular(200.0),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: warna.grey.withOpacity(.2),
+                                        color: warna.orange.withOpacity(.2),
                                         blurRadius: 10.0)
                                   ],
                                   color: warna.darkgrey),
