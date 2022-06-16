@@ -55,12 +55,12 @@ class HomeGuide extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(bottom: 20, top: 10),
                 child: const Text(
-                  "Selamat Datang Kuple !",
+                  "Selamat Datang justin !",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
               ),
               const Text(
-                "Tempat Wisata Guide",
+                "Tempat kerja Guide",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               Container(
@@ -72,9 +72,7 @@ class HomeGuide extends StatelessWidget {
                   itemCount: daftarWisata.length,
                   itemBuilder: (BuildContext context, int index) {
                     return TextButton(
-                        onPressed: () {
-                          daftarGuideScreen(context);
-                        },
+                        onPressed: () {},
                         child: Container(
                             width: MediaQuery.of(context).size.width * 0.65,
                             margin: const EdgeInsets.only(right: 10),
@@ -133,9 +131,7 @@ class HomeGuide extends StatelessWidget {
                   itemCount: daftarGuide.length,
                   itemBuilder: (BuildContext context, int index) {
                     return TextButton(
-                      onPressed: () {
-                        detailGuideScreen(context, daftarGuide[index]);
-                      },
+                      onPressed: () {},
                       child: Container(
                           width: MediaQuery.of(context).size.width * 0.65,
                           margin: const EdgeInsets.only(right: 10),
