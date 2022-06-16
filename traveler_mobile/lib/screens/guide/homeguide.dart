@@ -114,7 +114,7 @@ class HomeGuide extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  color: Colors.black12,
+                                  color: Color.fromARGB(31, 0, 0, 0),
                                   width: double.infinity,
                                   child: Image.network(
                                     daftarWisata[index].foto,
@@ -143,7 +143,7 @@ class HomeGuide extends StatelessWidget {
                               ],
                             ),
                             decoration: BoxDecoration(
-                                color: Colors.black54,
+                                color: Colors.orangeAccent,
                                 borderRadius: BorderRadius.circular(10))));
                   },
                 ),
@@ -204,7 +204,7 @@ class HomeGuide extends StatelessWidget {
                             ],
                           ),
                           decoration: BoxDecoration(
-                              color: Colors.black54,
+                              color: Colors.orangeAccent,
                               borderRadius: BorderRadius.circular(10))),
                     );
                   },
