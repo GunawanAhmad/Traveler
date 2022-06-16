@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/screens/guide/exploreguide.dart';
 import 'package:traveler_mobile/screens/guide/homeguide.dart';
+import 'package:traveler_mobile/screens/guide/profileguide.dart';
 import 'package:traveler_mobile/screens/user/profile.dart';
 
 class DashboardGuide extends StatefulWidget {
@@ -16,7 +17,7 @@ class _DashboardGuideState extends State<DashboardGuide> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeGuide(),
     ExploreGuide(),
-    const Profile(),
+    const ProfileGuide(),
   ];
 
   void _onItemTapped(int index) {
