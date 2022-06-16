@@ -49,9 +49,16 @@ class ProfileView extends ProfileModel {
                   ),
                 ),
                 const SizedBox(height: 40.0),
-                const Center(
-                  child: Text('Haloo Kuple ',
-                      style: TextStyle(color: Colors.black, fontSize: 25.0)),
+                Center(
+                  child: Column(
+                    children: [
+                      Text('Haloo Kuple',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 25.0)),
+                      Text('(Customer)',
+                          style: TextStyle(color: Colors.black, fontSize: 15.0))
+                    ],
+                  ),
                 )
               ]),
             ),
@@ -66,7 +73,17 @@ class ProfileView extends ProfileModel {
                     crossAxisSpacing: 20.0,
                     children: <Widget>[
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            AlertDialog alert = AlertDialog(
+                              title: Text('Hi'),
+                            );
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return alert;
+                              },
+                            );
+                          },
                           child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(200.0),
@@ -79,7 +96,17 @@ class ProfileView extends ProfileModel {
                               child: const Icon(Icons.favorite,
                                   size: 40.0, color: Colors.white))),
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            AlertDialog alert = AlertDialog(
+                              title: Text('(+62) 8221319280'),
+                            );
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return alert;
+                              },
+                            );
+                          },
                           child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(200.0),
@@ -92,7 +119,17 @@ class ProfileView extends ProfileModel {
                               child: const Icon(Icons.call,
                                   size: 40.0, color: Colors.white))),
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            AlertDialog alert = AlertDialog(
+                              title: Text('@kuple123@gmail.com'),
+                            );
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return alert;
+                              },
+                            );
+                          },
                           child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(200.0),
