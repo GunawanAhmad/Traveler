@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/screens/guide/dasboardguide.dart';
+import 'package:traveler_mobile/screens/guide/detail_wisata.dart';
 import 'package:traveler_mobile/screens/guide/exploreguide.dart';
 import 'package:traveler_mobile/screens/guide/homeguide.dart';
+import 'package:traveler_mobile/screens/guide/wisatapesanan.dart';
 import 'package:traveler_mobile/screens/user/daftar_guide.dart';
 import 'package:traveler_mobile/screens/user/dashboard_user.dart';
 import 'package:traveler_mobile/screens/register.dart';
@@ -30,7 +32,9 @@ class Traveler extends StatelessWidget {
         '/wisatafavorite': (context) => const WisataFavorite(),
         '/dasboardguide': (context) => const DashboardGuide(),
         '/exploreguide': (context) => ExploreGuide(),
-        '/homeguide': (context) => HomeGuide()
+        '/homeguide': (context) => HomeGuide(),
+        '/wisatapesan': (context) => const WisataPesanan(),
+        '/detailwisata': (context) => const DetailWisata()
       },
       debugShowCheckedModeBanner: false,
     );
