@@ -60,7 +60,7 @@ class HomeGuide extends StatelessWidget {
                 ),
               ),
               const Text(
-                "Wisata Populer",
+                "Tempat Wisata Guide",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               Container(
@@ -121,7 +121,7 @@ class HomeGuide extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 30),
               ),
               const Text(
-                "Guide di sekitar anda",
+                "pesanan tour guide",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               Container(
