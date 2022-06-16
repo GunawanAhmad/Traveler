@@ -6,8 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/type.dart';
 
-class HomeUser extends StatelessWidget {
-  HomeUser({Key? key}) : super(key: key);
+class HomeGuide extends StatelessWidget {
+  HomeGuide({Key? key}) : super(key: key);
 
   final List<Wisata> daftarWisata = [
     Wisata("Bandung", "Bandung, Indonesia",

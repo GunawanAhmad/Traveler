@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import "../../type.dart";
 
-class ExploreUser extends StatelessWidget {
-  ExploreUser({Key? key}) : super(key: key);
+class ExploreGuide extends StatelessWidget {
+  ExploreGuide({Key? key}) : super(key: key);
 
   final List<Wisata> daftarWisata = [
     Wisata("Bandung", "Bandung, Indonesia",
