@@ -34,6 +34,19 @@ class HomeGuide extends StatelessWidget {
     Guide("John Doe", "Bandung, Indonesia",
         "https://source.unsplash.com/IF9TK5Uy-KI"),
   ];
+  final List<Guide> Wisatafavorite = [
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1634300361357-4a41334a778d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://source.unsplash.com/7od8rzWvUVU"),
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://images.unsplash.com/photo-1627999490849-0ab41c1b215a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJhbmR1bmclMjBjaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+    Guide("Bandung", "Bandung, Indonesia",
+        "https://source.unsplash.com/7od8rzWvUVU"),
+  ];
+  void WisataFavorite(context, argument) {
+    Navigator.pushNamed(context, '/wisatafavorite', arguments: argument);
+  }
 
   void daftarGuideScreen(context) {
     Navigator.pushNamed(context, '/daftarguide');
@@ -55,12 +68,12 @@ class HomeGuide extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(bottom: 20, top: 10),
                 child: const Text(
-                  "Selamat Datang Kuple !",
+                  "Selamat Datang justin !",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
               ),
               const Text(
-                "Tempat Wisata Guide",
+                "Tempat kerja Guide",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               Container(
@@ -73,7 +86,7 @@ class HomeGuide extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return TextButton(
                         onPressed: () {
-                          daftarGuideScreen(context);
+                          WisataFavorite(context, Wisatafavorite[index]);
                         },
                         child: Container(
                             width: MediaQuery.of(context).size.width * 0.65,
@@ -134,7 +147,7 @@ class HomeGuide extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return TextButton(
                       onPressed: () {
-                        detailGuideScreen(context, daftarGuide[index]);
+                        WisataFavorite(context, Wisatafavorite[index]);
                       },
                       child: Container(
                           width: MediaQuery.of(context).size.width * 0.65,
