@@ -179,16 +179,13 @@ class ProfileView extends ProfileModel {
                       margin: const EdgeInsets.only(top: 60.0),
                       padding: const EdgeInsets.all(30.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Flexible(
                             child: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: <Widget>[
-                                const Text('80',
-                                    style: TextStyle(fontSize: 20.0)),
-                                const Text('Favorite',
-                                    style: TextStyle(fontSize: 15.0))
+                                const Text('About Me',
+                                    style: TextStyle(fontSize: 25.0))
                               ],
                             ),
                           ),
