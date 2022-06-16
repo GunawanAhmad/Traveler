@@ -41,7 +41,7 @@ class ProfileViewGuide extends ProfileModelGuide {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [Colors.white, Colors.grey.shade200])),
-                    child: Text('K',
+                    child: Text('J',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 100.0, color: warna.black)),
                   ),

@@ -29,7 +29,7 @@ class ExploreGuide extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Explore wisata",
+              "Tempat Wisata Anda Bekerja",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
             ),
             Container(
