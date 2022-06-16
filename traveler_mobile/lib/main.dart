@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveler_mobile/screens/guide/dasboardguide.dart';
 import 'package:traveler_mobile/screens/guide/exploreguide.dart';
 import 'package:traveler_mobile/screens/guide/homeguide.dart';
 import 'package:traveler_mobile/screens/user/daftar_guide.dart';
@@ -27,7 +28,7 @@ class Traveler extends StatelessWidget {
         '/daftarguide': (context) => DaftarGuideUser(),
         '/user/detailguide': (context) => const DetailGuideUser(),
         '/wisatafavorite': (context) => const WisataFavorite(),
-        '/dasboardguide': (context) => const Dashboard(),
+        '/dasboardguide': (context) => const DashboardGuide(),
         '/exploreguide': (context) => ExploreGuide(),
         '/homeguide': (context) => HomeGuide()
       },

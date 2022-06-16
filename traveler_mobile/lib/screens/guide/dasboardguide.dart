@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:traveler_mobile/screens/guide/exploreguide.dart';
 import 'package:traveler_mobile/screens/guide/homeguide.dart';
 import 'package:traveler_mobile/screens/guide/profileguide.dart';
-import 'package:traveler_mobile/screens/user/profile.dart';
 
 class DashboardGuide extends StatefulWidget {
   const DashboardGuide({Key? key}) : super(key: key);
