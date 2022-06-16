@@ -96,7 +96,7 @@ class ProfileViewGuide extends ProfileModelGuide {
                       InkWell(
                           onTap: () {
                             AlertDialog alert = const AlertDialog(
-                              title: Text('(+62) 8221319280'),
+                              title: Text('(+62) 82132233389'),
                             );
                             showDialog(
                               context: context,
@@ -119,7 +119,7 @@ class ProfileViewGuide extends ProfileModelGuide {
                       InkWell(
                           onTap: () {
                             AlertDialog alert = const AlertDialog(
-                              title: Text('@kuple123@gmail.com'),
+                              title: Text('@Justin3@gmail.com'),
                             );
                             showDialog(
                               context: context,
