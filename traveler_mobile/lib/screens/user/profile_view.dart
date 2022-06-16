@@ -49,7 +49,7 @@ class ProfileView extends ProfileModel {
                 const SizedBox(height: 40.0),
                 Center(
                   child: Column(
-                    children: [
+                    children: const [
                       Text('Haloo Kuple',
                           style:
                               TextStyle(color: Colors.black, fontSize: 25.0)),
@@ -72,7 +72,7 @@ class ProfileView extends ProfileModel {
                     children: <Widget>[
                       InkWell(
                           onTap: () {
-                            AlertDialog alert = AlertDialog(
+                            AlertDialog alert = const AlertDialog(
                               title: Text('Hi'),
                             );
                             showDialog(
@@ -95,7 +95,7 @@ class ProfileView extends ProfileModel {
                                   size: 40.0, color: Colors.white))),
                       InkWell(
                           onTap: () {
-                            AlertDialog alert = AlertDialog(
+                            AlertDialog alert = const AlertDialog(
                               title: Text('(+62) 8221319280'),
                             );
                             showDialog(
@@ -118,7 +118,7 @@ class ProfileView extends ProfileModel {
                                   size: 40.0, color: Colors.white))),
                       InkWell(
                           onTap: () {
-                            AlertDialog alert = AlertDialog(
+                            AlertDialog alert = const AlertDialog(
                               title: Text('@kuple123@gmail.com'),
                             );
                             showDialog(
