@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:traveler_mobile/type.dart';
 
-class WisataFavorite extends StatelessWidget {
-  const WisataFavorite({Key? key}) : super(key: key);
+class WisataPesanan extends StatelessWidget {
+  const WisataPesanan({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class WisataFavorite extends StatelessWidget {
       child: Scaffold(
           appBar: AppBar(
             title: const Text(
-              "Wisata Favorite ",
+              "order ",
               style: TextStyle(color: Colors.white),
             ),
             backgroundColor: Colors.black,

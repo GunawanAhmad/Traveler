@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './profile_model.dart';
+import '../guide/profile_model_guide.dart';
 import '../colors.dart' as warna;
 
-class ProfileView extends ProfileModel {
+class ProfileViewGuide extends ProfileModelGuide {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,7 @@ class ProfileView extends ProfileModel {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
-                  colors: [warna.grey, warna.darkgrey])),
+                  colors: [warna.orange, warna.orangee])),
         ),
         CustomScrollView(
           slivers: <Widget>[
@@ -41,7 +41,7 @@ class ProfileView extends ProfileModel {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [Colors.white, Colors.grey.shade200])),
-                    child: Text('K',
+                    child: Text('J',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 100.0, color: warna.black)),
                   ),
@@ -50,10 +50,10 @@ class ProfileView extends ProfileModel {
                 Center(
                   child: Column(
                     children: const [
-                      Text('Haloo Kuple',
+                      Text('Haloo Justin',
                           style:
                               TextStyle(color: Colors.black, fontSize: 25.0)),
-                      Text('(Customer)',
+                      Text('(Guide)',
                           style: TextStyle(color: Colors.black, fontSize: 15.0))
                     ],
                   ),
@@ -87,7 +87,7 @@ class ProfileView extends ProfileModel {
                                   borderRadius: BorderRadius.circular(200.0),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: warna.grey.withOpacity(.2),
+                                        color: warna.orange.withOpacity(.2),
                                         blurRadius: 10.0)
                                   ],
                                   color: warna.darkgrey),
@@ -96,7 +96,7 @@ class ProfileView extends ProfileModel {
                       InkWell(
                           onTap: () {
                             AlertDialog alert = const AlertDialog(
-                              title: Text('(+62) 8221319280'),
+                              title: Text('(+62) 82132233389'),
                             );
                             showDialog(
                               context: context,
@@ -110,7 +110,7 @@ class ProfileView extends ProfileModel {
                                   borderRadius: BorderRadius.circular(200.0),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: warna.grey.withOpacity(.2),
+                                        color: warna.orange.withOpacity(.2),
                                         blurRadius: 10.0)
                                   ],
                                   color: warna.darkgrey),
@@ -119,7 +119,7 @@ class ProfileView extends ProfileModel {
                       InkWell(
                           onTap: () {
                             AlertDialog alert = const AlertDialog(
-                              title: Text('@kuple123@gmail.com'),
+                              title: Text('@Justin3@gmail.com'),
                             );
                             showDialog(
                               context: context,
@@ -133,7 +133,7 @@ class ProfileView extends ProfileModel {
                                   borderRadius: BorderRadius.circular(200.0),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: warna.grey.withOpacity(.2),
+                                        color: warna.orange.withOpacity(.2),
                                         blurRadius: 10.0)
                                   ],
                                   color: warna.darkgrey),

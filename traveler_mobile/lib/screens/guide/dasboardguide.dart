@@ -1,24 +1,22 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:traveler_mobile/screens/user/explore.dart';
-import 'package:traveler_mobile/screens/user/home.dart';
-import 'package:traveler_mobile/screens/user/favorite.dart';
-import 'package:traveler_mobile/screens/user/profile.dart';
+import 'package:traveler_mobile/screens/guide/exploreguide.dart';
+import 'package:traveler_mobile/screens/guide/homeguide.dart';
+import 'package:traveler_mobile/screens/guide/profileguide.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({Key? key}) : super(key: key);
+class DashboardGuide extends StatefulWidget {
+  const DashboardGuide({Key? key}) : super(key: key);
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<DashboardGuide> createState() => _DashboardGuideState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardGuideState extends State<DashboardGuide> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeUser(),
-    ExploreUser(),
-    FavoriteUser(),
-    const Profile(),
+    HomeGuide(),
+    ExploreGuide(),
+    const ProfileGuide(),
   ];
 
   void _onItemTapped(int index) {
@@ -41,13 +39,8 @@ class _DashboardState extends State<Dashboard> {
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-            backgroundColor: Colors.black,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorites',
+            icon: Icon(Icons.contacts),
+            label: 'Work',
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
