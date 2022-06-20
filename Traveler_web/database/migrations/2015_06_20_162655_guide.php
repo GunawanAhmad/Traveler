@@ -15,13 +15,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('daftar_wisatas', function (Blueprint $table) {
+        Schema::create('guides', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('nama_daerah');
-            $table->string('provinsi');
-            $table->string('alamat');
-            $table->string('deskripsi')->nullable();
-            $table->string('foto')->nullable();
+            $table->string('name')->nullable(false);
+            $table->string('email')->unique()->nullable(false);
+            $table->string('password')->nullable(false);
+            $table->date('ttl')->nullable(true);
+            $table->string('alamat')->nullable(true);
+            $table->string('foto')->nullable(true);
+            $table->string('no_hp')->nullable(true);
             $table->timestamps();
         });
     }
@@ -34,7 +36,7 @@ return new class extends Migration
     public function down()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Schema::dropIfExists('daftar_wisatas');
+        Schema::dropIfExists('guides');
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 };

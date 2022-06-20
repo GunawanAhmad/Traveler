@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+
 
 return new class extends Migration
 {
@@ -17,7 +19,6 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('name')->nullable(false);
             $table->string('email')->unique()->nullable(false);
-            $table->string('role')->nullable(false);
             $table->string('password')->nullable(false);
             $table->date('ttl')->nullable(true);
             $table->string('alamat')->nullable(true);
@@ -34,6 +35,8 @@ return new class extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Schema::dropIfExists('users');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 };

@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Guide extends Authenticatable
+class Customer extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -25,10 +25,6 @@ class Guide extends Authenticatable
 
     public function pesanan() {
         return $this->hasMany('App\Models\Pesanan');
-    }
-
-    public function request() {
-        return $this->hasMany('App\Models\requestTourGuide');
     }
 
     public function age() {

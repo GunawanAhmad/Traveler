@@ -10,14 +10,16 @@ class requestTourGuide extends Model
     use HasFactory;
     protected $table = 'requestTourGuide';
     protected $fillable = [
-        'nama',
-        'email',
-        'password',
-        'role',
-        'ttl',
-        'alamat',
-        'foto',
-        'no_hp',
+        'guides_id',
+        'wisatas_id',
         'status'
     ];
+
+    public function guide() {
+        return $this->belongsTo('App\Models\Guide');
+    }
+
+    public function wisata() {
+        return $this->belongsTo('App\Models\DaftarWisata');
+    }
 }
