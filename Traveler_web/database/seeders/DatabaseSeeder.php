@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             'name' => env('ADMIN_NAME'),
             'email' => env('ADMIN_EMAIL'),
             'password'=> bcrypt(env('ADMIN_PASS')),
-            'role' => 'admin'
         ]);
     }
 }

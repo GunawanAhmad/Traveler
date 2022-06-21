@@ -6,13 +6,14 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
+use App\Models\Guide;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 
-class CustomerController extends Controller
+class GuideController extends Controller
 {
     public function login(Request $request)
     {
@@ -30,8 +31,8 @@ class CustomerController extends Controller
                 ],$validator->errors()->first() , 500);
             }
             $credentials = request(['email', 'password']);
-            if (Auth::guard('customer')->attempt($credentials)) {
-                $user = Auth::guard('customer')->user();
+            if (Auth::guard('guide')->attempt($credentials)) {
+                $user = Auth::guard('guide')->user();
                 if (!Hash::check($request->password, $user->password, [])) {
                     throw new \Exception('Invalid Credentials');
                 }
@@ -65,7 +66,7 @@ class CustomerController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:customers'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:guides'],
                 'password' => ['required', 'min:3'],
                 'alamat' => ['required', 'max:255'],
             ]);
@@ -77,7 +78,9 @@ class CustomerController extends Controller
                 ],$validator->errors()->first() , 500);
             }
 
-            $user = Customer::create($request->all());
+            Log::info($request);
+
+            $user = Guide::create($request->all());
             $user->update(['password' => Hash::make($request->password)]);
             if ($request->hasFile('foto')) {
                 $fotoName = $request->file('foto')->hashName();

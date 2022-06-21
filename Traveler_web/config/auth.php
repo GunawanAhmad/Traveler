@@ -43,7 +43,11 @@ return [
 
         'guide' => [
             'driver' => 'session',
-            'provider' => 'guide',
+            'provider' => 'guides',
+        ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
         ],
     ],
 
@@ -68,6 +72,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'guides' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Guide::class,
+        ],
+
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
         ],
 
         // 'users' => [

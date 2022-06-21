@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Guide;
 
 class GuideController extends Controller
 {
     function index() {
-        $guides = User::where([['role', '=', 'guide']])->get();
+        $guides = Guide::all();
         return view('daftar_guide', ['guides' => $guides]);
     }
 
     function detail_guide() {
         $id = last(request()->segments());
-        $guide = User::find($id);
+        $guide = Guide::find($id);
         return view('Info_guide', ['guide' => $guide]);
     }
 }
