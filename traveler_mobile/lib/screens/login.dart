@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:traveler_mobile/component/Loading.dart';
 
 enum LoginType { user, guide }
-
-LoginType selectedUser = LoginType.user;
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -33,6 +32,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String email = "", password = "";
   bool loading = false;
+  LoginType? type = LoginType.user;
 
   //fungsi untuk memanggil API
   Future<http.Response> getData(data, url) async {
@@ -51,7 +51,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   void login(context) async {
     switchLoading();
     var data = {'email': email, 'password': password};
-    var res = await getData(data, 'http://127.0.0.1:8000/api/login/customer');
+    var url = "";
+    if (type == LoginType.user) {
+      url = 'http://127.0.0.1:8000/api/login/customer';
+    } else {
+      url = 'http://127.0.0.1:8000/api/login/guide';
+    }
+    var res = await getData(data, url);
 
     var body = json.decode(res.body);
     if (body['meta']['code'] == 200) {
@@ -60,7 +66,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       SharedPreferences localStorage = await SharedPreferences.getInstance();
       localStorage.setString('token', json.encode(body['data']['token']));
       localStorage.setString('user', json.encode(body['data']['user']));
-      Navigator.pushNamed(context, '/dashboardUser');
+      if (type == LoginType.user) {
+        Navigator.pushNamed(context, '/dashboardUser');
+      } else {
+        Navigator.pushNamed(context, '/dasboardguide');
+      }
     } else {
       switchLoading();
       final snackbar = SnackBar(
@@ -90,10 +100,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your email',
-                    ),
+                        hintText: 'Enter your email',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your email';
@@ -102,10 +115,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       return null;
                     },
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
+                    obscureText: true,
                     decoration: const InputDecoration(
-                      hintText: 'Enter your password',
-                    ),
+                        hintText: 'Enter your password',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your password';
@@ -116,7 +133,59 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
-                    child: const RadioGroup(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          children: [
+                            Radio(
+                              value: LoginType.guide,
+                              groupValue: type,
+                              activeColor: Colors.black,
+                              onChanged: (LoginType? value) {
+                                setState(() {
+                                  type = value;
+                                });
+                              },
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    type = LoginType.guide;
+                                  });
+                                },
+                                child: const Text(
+                                  "Guide",
+                                  style: TextStyle(color: Colors.black),
+                                ))
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                              value: LoginType.user,
+                              groupValue: type,
+                              activeColor: Colors.black,
+                              onChanged: (LoginType? value) {
+                                setState(() {
+                                  type = value;
+                                });
+                              },
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    type = LoginType.user;
+                                  });
+                                },
+                                child: const Text(
+                                  "Customer",
+                                  style: TextStyle(color: Colors.black),
+                                ))
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -127,12 +196,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         // the form is invalid.
                         if (_formKey.currentState!.validate()) {
                           // Process data.
-                          if (selectedUser == LoginType.user) {
-                            login(context);
-                          }
+                          login(context);
                         }
                       },
-                      child: const Text('Login'),
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 10),
+                        child: const Center(
+                          child: Text(
+                            "Login",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(primary: Colors.black),
                     )),
                   ),
@@ -155,83 +232,5 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 ],
               ),
             ));
-  }
-}
-
-class RadioGroup extends StatefulWidget {
-  const RadioGroup({Key? key}) : super(key: key);
-
-  @override
-  State<RadioGroup> createState() => _RadioGroupState();
-}
-
-class _RadioGroupState extends State<RadioGroup> {
-  LoginType? type = LoginType.user;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Row(
-          children: [
-            Radio(
-              value: LoginType.guide,
-              groupValue: type,
-              activeColor: Colors.black,
-              onChanged: (LoginType? value) {
-                setState(() {
-                  type = value;
-                });
-              },
-            ),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    type = LoginType.guide;
-                  });
-                },
-                child: const Text(
-                  "Guide",
-                  style: TextStyle(color: Colors.black),
-                ))
-          ],
-        ),
-        Row(
-          children: [
-            Radio(
-              value: LoginType.user,
-              groupValue: type,
-              activeColor: Colors.black,
-              onChanged: (LoginType? value) {
-                setState(() {
-                  type = value;
-                });
-              },
-            ),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    type = LoginType.user;
-                  });
-                },
-                child: const Text(
-                  "Customer",
-                  style: TextStyle(color: Colors.black),
-                ))
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class Loading extends StatelessWidget {
-  const Loading({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(color: Colors.black),
-    );
   }
 }

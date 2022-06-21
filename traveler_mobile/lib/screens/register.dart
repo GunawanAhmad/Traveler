@@ -5,17 +5,20 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:path/path.dart' as path;
+import 'package:traveler_mobile/component/Loading.dart';
+import 'package:traveler_mobile/screens/login.dart';
+
+enum RegisterType { user, guide }
 
 class Register extends StatelessWidget {
   const Register({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [MyStatefulWidget()],
+    return const Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: MyStatefulWidget(),
       ),
     );
   }
@@ -34,6 +37,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final ImagePicker _picker = ImagePicker();
   String email = "", password = "", alamat = "", noHp = "", nama = "";
   bool loading = false;
+  RegisterType? type = RegisterType.user;
 
   void switchLoading() {
     setState(() {
@@ -43,7 +47,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   void register(context) async {
     switchLoading();
-    String url = 'http://127.0.0.1:8000/api/register/customer';
+    String url = '';
+
+    if (type == RegisterType.user) {
+      url = 'http://127.0.0.1:8000/api/register/customer';
+    } else {
+      url = 'http://127.0.0.1:8000/api/register/guide';
+    }
+
     Map<String, String> headers = {
       'Content-Type': 'multipart/form-data',
     };
@@ -71,7 +82,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         SharedPreferences localStorage = await SharedPreferences.getInstance();
         localStorage.setString('token', json.encode(data['data']['token']));
         localStorage.setString('user', json.encode(data['data']['user']));
-        Navigator.pushNamed(context, '/dashboardUser');
+        if (type == RegisterType.user) {
+          Navigator.pushNamed(context, '/dashboardUser');
+        } else {
+          Navigator.pushNamed(context, '/dasboardguide');
+        }
       } else {
         final snackbar = SnackBar(
           content: Text(data['meta']['message']),
@@ -101,10 +116,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your name',
-                    ),
+                        hintText: 'Enter your name',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your name';
@@ -113,10 +131,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       return null;
                     },
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your phone number',
-                    ),
+                        hintText: 'Enter your phone number',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your phone number';
@@ -125,10 +146,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       return null;
                     },
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your Address',
-                    ),
+                        hintText: 'Enter your Address',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your address';
@@ -137,10 +161,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       return null;
                     },
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Enter your email',
-                    ),
+                        hintText: 'Enter your email',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your email';
@@ -149,10 +176,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       return null;
                     },
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20),
+                  ),
                   TextFormField(
+                    obscureText: true,
                     decoration: const InputDecoration(
-                      hintText: 'Enter your password',
-                    ),
+                        hintText: 'Enter your password',
+                        border: OutlineInputBorder()),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your password';
@@ -187,7 +218,59 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
-                    child: const RadioGroup(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          children: [
+                            Radio(
+                              value: RegisterType.guide,
+                              groupValue: type,
+                              activeColor: Colors.black,
+                              onChanged: (RegisterType? value) {
+                                setState(() {
+                                  type = value;
+                                });
+                              },
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    type = RegisterType.guide;
+                                  });
+                                },
+                                child: const Text(
+                                  "Guide",
+                                  style: TextStyle(color: Colors.black),
+                                ))
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                              value: RegisterType.user,
+                              groupValue: type,
+                              activeColor: Colors.black,
+                              onChanged: (RegisterType? value) {
+                                setState(() {
+                                  type = value;
+                                });
+                              },
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    type = RegisterType.user;
+                                  });
+                                },
+                                child: const Text(
+                                  "Customer",
+                                  style: TextStyle(color: Colors.black),
+                                ))
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -198,11 +281,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         // the form is invalid.
                         if (_formKey.currentState!.validate()) {
                           // Process data.
-                          // Navigator.pushNamed(context, '/dashboard');
+
                           register(context);
                         }
                       },
-                      child: const Text('Register'),
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 10),
+                        child: const Center(
+                          child: Text(
+                            "Register",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(primary: Colors.black),
                     )),
                   ),
@@ -286,85 +379,5 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       _imageFile = pickedFile;
       Navigator.pop(context);
     });
-  }
-}
-
-enum RegisterType { user, guide }
-
-class RadioGroup extends StatefulWidget {
-  const RadioGroup({Key? key}) : super(key: key);
-
-  @override
-  State<RadioGroup> createState() => _RadioGroupState();
-}
-
-class _RadioGroupState extends State<RadioGroup> {
-  RegisterType? type = RegisterType.user;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Row(
-          children: [
-            Radio(
-              value: RegisterType.guide,
-              groupValue: type,
-              activeColor: Colors.black,
-              onChanged: (RegisterType? value) {
-                setState(() {
-                  type = value;
-                });
-              },
-            ),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    type = RegisterType.guide;
-                  });
-                },
-                child: const Text(
-                  "Guide",
-                  style: TextStyle(color: Colors.black),
-                ))
-          ],
-        ),
-        Row(
-          children: [
-            Radio(
-              value: RegisterType.user,
-              groupValue: type,
-              activeColor: Colors.black,
-              onChanged: (RegisterType? value) {
-                setState(() {
-                  type = value;
-                });
-              },
-            ),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    type = RegisterType.user;
-                  });
-                },
-                child: const Text(
-                  "Customer",
-                  style: TextStyle(color: Colors.black),
-                ))
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class Loading extends StatelessWidget {
-  const Loading({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(color: Colors.black),
-    );
   }
 }
