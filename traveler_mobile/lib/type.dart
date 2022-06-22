@@ -2,8 +2,9 @@ class Wisata {
   String namaWisata;
   String alamat;
   String foto;
+  String deskripsi;
 
-  Wisata(this.namaWisata, this.alamat, this.foto);
+  Wisata(this.namaWisata, this.alamat, this.foto, [this.deskripsi = ""]);
 }
 
 class Guide {
