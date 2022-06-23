@@ -98,4 +98,12 @@ class CustomerController extends Controller
             ], 'Authentication Failed', 500);
         }
     }
+
+    function logout(Request $request)
+    {   
+        $token = $request->user()->currentAccessToken()->delete();
+        return ResponseFormatter::success([
+            'token' => $token,
+        ],'Succes');
+    }
 }

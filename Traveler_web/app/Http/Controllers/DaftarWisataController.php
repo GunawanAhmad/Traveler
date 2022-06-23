@@ -66,7 +66,7 @@ class DaftarWisataController extends Controller
         $model->update($request->all());
         if($request->file('foto')) {
             Storage::delete('/public/images/'.$foto_name);
-            $name = $request->file('foto')->hashName();
+            $name = 'storage/images/'.$request->file('foto')->hashName();
             $request->file('foto')->store('public/images');
             $model->update(['foto' => $name]);
         }

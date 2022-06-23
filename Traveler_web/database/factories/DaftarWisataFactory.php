@@ -17,7 +17,11 @@ class DaftarWisataFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nama_daerah' => $this->faker->lexify(),
+            'provinsi' => $this->faker->lexify(),
+            'foto' => 'img/monas.jpg',
+            'alamat' => $this->faker->lexify(),
+            'deskripsi' => $this->faker->lexify(),
         ];
     }
 }
