@@ -40,11 +40,11 @@ class HomeGuide extends StatelessWidget {
   final List<Guide> Wisatapesanan = [
     Guide("Punclut", "Bandung, Indonesia",
         "https://images.unsplash.com/photo-1634300361357-4a41334a778d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
-    Guide("Bandung", "Bandung, Indonesia",
+    Guide("Cukul", "Bandung, Indonesia",
         "https://source.unsplash.com/7od8rzWvUVU"),
-    Guide("Bandung", "Bandung, Indonesia",
+    Guide("Bima", "Nusa Tenggara Barat, Indonesia",
         "https://images.unsplash.com/photo-1627999490849-0ab41c1b215a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJhbmR1bmclMjBjaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
-    Guide("Bandung", "Bandung, Indonesia",
+    Guide("Kota Bandung", "Bandung, Indonesia",
         "https://source.unsplash.com/7od8rzWvUVU"),
   ];
 
