@@ -29,7 +29,7 @@ class _HomeUser extends State<HomePage> {
   bool loading = false;
 
   final List<Wisata> daftarWisata = [];
-  late Wisata wisataPopuler;
+  Wisata wisataPopuler = Wisata('','','','');
 
   //fungsi untuk memanggil API
   Future<http.Response> logoutAPI(url) async {

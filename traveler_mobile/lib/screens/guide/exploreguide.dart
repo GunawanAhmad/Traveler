@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveler_mobile/screens/user/detail_guide.dart';
 import "../../type.dart";
 
 class ExploreGuide extends StatelessWidget {
@@ -41,7 +42,9 @@ class ExploreGuide extends StatelessWidget {
                 itemCount: daftarWisata.length,
                 itemBuilder: (BuildContext context, int index) {
                   return TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                          daftarGuideScreen(context);
+                        },
                     child: Container(
                         padding: const EdgeInsets.only(bottom: 10),
                         width: MediaQuery.of(context).size.width * 1,
