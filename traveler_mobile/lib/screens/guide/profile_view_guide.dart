@@ -20,7 +20,7 @@ class ProfileViewGuide extends ProfileModelGuide {
           slivers: <Widget>[
             const SliverAppBar(
               backgroundColor: Colors.transparent,
-              title: Text('PROFILE'),
+              title: Text(''),
             ),
             SliverList(
               delegate: SliverChildListDelegate([

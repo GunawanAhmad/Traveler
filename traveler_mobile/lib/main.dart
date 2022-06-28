@@ -3,11 +3,13 @@ import 'package:traveler_mobile/screens/guide/dasboardguide.dart';
 import 'package:traveler_mobile/screens/guide/detail_wisata.dart';
 import 'package:traveler_mobile/screens/guide/exploreguide.dart';
 import 'package:traveler_mobile/screens/guide/homeguide.dart';
+import 'package:traveler_mobile/screens/guide/profileguide.dart';
 import 'package:traveler_mobile/screens/guide/wisatapesanan.dart';
 import 'package:traveler_mobile/screens/user/daftar_guide.dart';
 import 'package:traveler_mobile/screens/user/dashboard_user.dart';
 import 'package:traveler_mobile/screens/register.dart';
 import 'package:traveler_mobile/screens/user/detail_guide.dart';
+import 'package:traveler_mobile/screens/user/profile.dart';
 import 'package:traveler_mobile/screens/user/wisata_favorite.dart';
 import 'package:traveler_mobile/screens/welcome.dart';
 import 'package:traveler_mobile/screens/login.dart';
@@ -34,7 +36,9 @@ class Traveler extends StatelessWidget {
         '/exploreguide': (context) => ExploreGuide(),
         '/homeguide': (context) => HomeGuide(),
         '/wisatapesan': (context) => const WisataPesanan(),
-        '/detailwisata': (context) => const DetailWisata()
+        '/detailwisata': (context) => const DetailWisata(),
+        '/profileguide': (context) => const ProfileGuide(),
+        '/profilecustomer': (context) => const Profile(),
       },
       debugShowCheckedModeBanner: false,
     );
